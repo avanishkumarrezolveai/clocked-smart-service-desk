@@ -5,6 +5,8 @@ No client data or API credentials are included. All actions are simulated.
 from __future__ import annotations
 
 import csv
+import hashlib
+import threading
 import os
 import re
 import secrets
@@ -14,11 +16,20 @@ from pathlib import Path
 from typing import Any
 
 from flask import Flask, jsonify, render_template, request
+from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
 
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 app = Flask(__name__, static_folder="public/static")
 app.config["MAX_CONTENT_LENGTH"] = 48 * 1024
+# Signed state prevents callers from forging a review/confirmation action.
+_state_secret = os.getenv("SESSION_SIGNING_KEY") or hashlib.sha256(
+    (os.getenv("CLOCKED_API_KEY") or os.getenv("DEMO_SESSION_SECRET") or "local-demo-only-not-for-production").encode()
+    + b"|clocked-service-desk-state-v2"
+).hexdigest()
+_state_signer = URLSafeTimedSerializer(_state_secret, salt="clocked-demo-session")
+_gateway_slots = threading.BoundedSemaphore(2)
+
 
 
 def load(name: str) -> list[dict[str, str]]:
@@ -47,7 +58,7 @@ for m in FIELDS:
     FIELDS_BY_OFFERING[m["offering_id"]].append(m)
 
 STOP = set("a an the my i me you we our your is am are was were to of for at in on and or from with it this that do does can could would please some how what be by if which a new".split())
-SYNONYM = {"broken": "failure", "crashing": "crash", "crashes": "crash", "install": "install", "installation": "install", "pc": "desktop", "computer": "computer", "not": "not", "wifi": "wifi", "wi-fi": "wifi", "signin": "sign", "logon": "sign", "reset": "reset", "passwords": "password"}
+SYNONYM = {"broken": "failure", "crashing": "crash", "crashes": "crash", "install": "install", "installation": "install", "pc": "desktop", "computer": "computer", "not": "not", "wifi": "wifi", "wi-fi": "wifi", "signin": "sign", "logon": "sign", "reset": "reset", "passwords": "password", "re-enrolled": "enrollment", "enrolled": "enrollment", "enrolment": "enrollment", "enroll": "enrollment", "enrolled": "enrollment", "reenrolled": "enrollment"}
 
 
 def tokens(text: str) -> list[str]:
@@ -73,17 +84,36 @@ def rank_knowledge(text: str):
 
 
 def rank_offerings(text: str, ticket_type: str):
+    low = text.lower()
+    if "laptop" in low and any(x in low for x in ("won't turn on", "will not turn on", "not starting", "doesn't start", "not boot")):
+        text += " laptop not turning on laptop fails to boot no power"
+    if "shared drive" in low and any(x in low for x in ("cannot access", "can't access", "not available", "unavailable")):
+        text += " existing shared drive cannot be accessed file share down"
+    if "printer" in low and "jam" in low:
+        text += " printer jam or error"
+    if "vpn" in low and any(x in low for x in ("no longer", "can't connect", "not connecting")):
+        text += " vpn connection failure"
     out = []
     for o in OFFERINGS.values():
         if o["ticket_type_id"] != ticket_type or o["active"].lower() != "true":
             continue
         score = overlap(text, f"{o['offering_name']} {o['synonyms']} {o['domain']}")
         phrase = o["offering_name"].lower().replace("request ", "")
-        if phrase in text.lower():
-            score += 0.9
-        for syn in o["synonyms"].split("|"):
-            if len(syn) >= 5 and syn in text.lower():
-                score += 0.7
+        q = text.lower()
+        if phrase in q:
+            score += 2.0
+        for syn in o["synonyms"].lower().split("|"):
+            if len(syn) >= 5 and syn in q:
+                score += 1.8
+        # Give distinct products and modifiers a say before a fuzzy rerank.
+        needed = set(tokens(phrase))
+        given = set(tokens(q))
+        if needed and len(needed & given) == len(needed):
+            score += 1.2
+        if {"guest", "wifi"} <= given and "guest" not in needed and "wifi" not in needed:
+            score -= 1.5
+        if {"vpn", "access"} <= given and "home" in needed and "home" not in given:
+            score -= 1.0
         out.append((score, o))
     return sorted(out, key=lambda x: x[0], reverse=True)
 
@@ -93,12 +123,39 @@ def clean_state(value: Any) -> dict:
         return {}
     allowed = ["phase", "original_text", "ticket_type", "offering_id", "asset_id", "asset_type", "asset_candidates", "fields", "preferred_action", "knowledge_id", "pause_reason"]
     out = {k: value[k] for k in allowed if k in value}
+    if out.get("ticket_type") not in (None, "INC", "REQ"):
+        out.pop("ticket_type", None)
+    if out.get("phase") not in (None, "initial", "knowledge", "clarify_intent", "multi_intent", "asset_type", "symptom", "clarify_symptom", "asset_choice", "clarify_offering", "qualifying", "missing_field", "review"):
+        out.pop("phase", None)
+    if not isinstance(out.get("asset_candidates", []), list):
+        out.pop("asset_candidates", None)
+    if out.get("asset_type") not in (None, "laptop", "desktop"):
+        out.pop("asset_type", None)
     if out.get("offering_id") not in OFFERINGS:
         out.pop("offering_id", None)
     if not isinstance(out.get("fields", {}), dict):
         out["fields"] = {}
     out["fields"] = {str(k)[:60]: str(v)[:200] for k, v in out.get("fields", {}).items() if isinstance(v, (str, int, float))}
     return out
+
+
+def sealed_state(state, user_id):
+    return _state_signer.dumps({"user_id": user_id, "state": clean_state(state)})
+
+
+def verify_state(data, user_id):
+    raw = data.get("state")
+    if raw is None or raw == {}:
+        return {}
+    if not isinstance(raw, dict) or not isinstance(data.get("state_token"), str):
+        raise ValueError("The session could not be verified. Please start a new conversation.")
+    try:
+        verified = _state_signer.loads(data["state_token"], max_age=60 * 60 * 3)
+    except (BadSignature, SignatureExpired, ValueError):
+        raise ValueError("The session has expired or was changed. Please start a new conversation.")
+    if verified.get("user_id") != user_id or verified.get("state") != clean_state(raw):
+        raise ValueError("The session does not match this user. Please start a new conversation.")
+    return clean_state(raw)
 
 
 def event(endpoint: str, origin: str, detail: str, duration: int | None = None, raw: dict | None = None):
@@ -121,6 +178,7 @@ class ClockedGateway:
         self.traces = []
         self.live = bool(os.getenv("CLOCKED_API_KEY"))
         self.error = None
+        self.unavailable = False
         self._client = None
         if self.live:
             try:
@@ -136,6 +194,10 @@ class ClockedGateway:
             self.traces.append(event(endpoint, "error", self.error or "Client unavailable"))
             return None
         begin = time.monotonic()
+        if not _gateway_slots.acquire(blocking=False):
+            self.unavailable = True
+            self.traces.append(event(endpoint, "error", "Clocked is busy. Retry in a moment."))
+            return None
         try:
             res = getattr(self._client, endpoint)(**kwargs)
             raw = dict(res)
@@ -144,10 +206,13 @@ class ClockedGateway:
             return raw
         except Exception as exc:
             # Never expose authorization headers or full exception bodies to the browser.
-            code = getattr(exc, "status", None)
+            code = getattr(exc, "status", None) or getattr(exc, "status_code", None)
+            self.unavailable = True
             label = f"API request failed (HTTP {code})" if code else "API request failed"
             self.traces.append(event(endpoint, "error", label, round((time.monotonic() - begin) * 1000)))
             return None
+        finally:
+            _gateway_slots.release()
 
     def decide_intent(self, text: str):
         return self.invoke("decide", state=text, questions={
@@ -186,6 +251,38 @@ def noun_probability(result, key):
 
 def response(message, state, *, card=None, choices=None, trace=None):
     return {"message": message, "state": state, "card": card, "choices": choices or [], "trace": trace or [], "mode": status()}
+
+
+def is_incident(text):
+    return bool(re.search(r"\b(broken|breakdown|crash(?:ing|ed|es)?|not working|isn't working|is not working|doesn't work|won'?t|cannot|can't|couldn't|failed|failure|error|slow|offline|outage|stuck|jam(?:med)?|locked|does not|will not|no longer|disconnect(?:ed|ing|s)?|dead|lost|not turn(?:ing)? on|not start(?:ing)?|flicker(?:ing)?)\b", text.lower()))
+
+
+def is_request(text):
+    q = text.lower()
+    return bool(re.search(r"\b(request|install(?:ed|ation|ing)?|need (?:a|an|new)|need .* installed|replacement|give me access|grant access|want .* access|access to|order|new laptop|new desktop|can i get|can you provide|configure|set up|setup|provision|enroll(?:ed|ment)?|re.enroll|create)\b", q))
+
+
+def explicit_agent(text):
+    return bool(re.search(r"\b(connect me|talk to (?:an? |someone|support)|speak to (?:an? |someone)|live chat|agent|someone|human)\b", text.lower()))
+
+
+def new_intent_during_flow(text):
+    q = text.lower().strip()
+    return bool(re.search(r"^(?:actually|sorry|instead|new request|another issue|forget that|i meant|change that|start over)", q)) or bool(re.search(r"^(?:please )?(?:i (?:need|want)|can you|create a|request a|install|my .+ (?:is|won't|will not|doesn't))", q))
+
+
+def named_unknown_target(text):
+    q = text.lower()
+    m = re.search(r"(?:access to|install|request access to|need access to)\s+([a-z][a-z0-9 ]{2,65})", q)
+    if not m:
+        return False
+    target = m.group(1).split(" for ")[0].split(" on ")[0].strip()
+    known = " ".join(o["offering_name"] + " " + o["synonyms"] for o in OFFERINGS.values()).lower()
+    common = ("vpn", "wifi", "wi fi", "sap", "outlook", "shared drive", "laptop", "desktop", "printer", "account", "role", "mfa", "adobe", "visio")
+    if any(w in target for w in common):
+        return False
+    # Specific, unmatched product names must not be mapped to unrelated generic catalog items.
+    return bool(target and target not in known and len([w for w in target.split() if w not in STOP]) >= 2)
 
 
 def choose_asset_candidates(text, user_id, state):
@@ -239,10 +336,15 @@ def continue_classification(state, user_id, gw):
         types = sorted({a["device_type"] for a in ASSETS if a["user_id"] == user_id and a["status"] == "Active" and a["device_type"].lower() in ("laptop", "desktop")})
         if len(types) > 1:
             state["phase"] = "asset_type"
-            return response("I found both laptops and a desktop assigned to this demo user. Which type of computer is affected?", state, choices=[{"label": t, "value": "device:" + t.lower()} for t in types], trace=trace)
+            return response("Which device is affected? I can see more than one type of computer on this sample profile.", state, choices=[{"label": t, "value": "device:" + t.lower()} for t in types], trace=trace)
     # The default offering shortlist comes from the local catalog; Clocked reranks it in live mode.
     ranked = rank_offerings(original + " " + state.get("asset_type", ""), ticket_type)
-    shortlist = [o for score, o in ranked[:7] if score > 0]
+    shortlist = [o for score, o in ranked[:7] if score >= .35]
+    trace.append(event("Catalog shortlist", "local", ", ".join(o["offering_id"] for o in shortlist) or "No matching candidates"))
+    if named_unknown_target(original):
+        return response("I couldn't find that named application in the demo catalog. Can you confirm the application name or choose a supported service?", {**state, "phase": "clarify_offering"}, trace=trace)
+    if not shortlist or (ranked and ranked[0][0] < .55):
+        return response("I need a little more detail to select the right service offering. What application or service do you mean?", {**state, "phase": "clarify_offering"}, trace=trace)
     if not shortlist:
         return response("I can help, but I couldn't confidently match that to a catalog offering. Could you describe the system or device involved?", {**state, "phase": "clarify_offering"}, choices=[], trace=trace)
     top = shortlist[0]
@@ -252,14 +354,18 @@ def continue_classification(state, user_id, gw):
         valid = {o["offering_id"]: o for o in shortlist}
         selected = next((x for x in items if x.get("id") in valid and x.get("action") == "use" and float(x.get("relevance_score", 0)) >= .36), None)
         if selected:
-            top = valid[selected["id"]]
+            # Strong exact catalog matches should not be overturned by a fuzzy similar offering.
+            if ranked[0][0] < 2.0 or selected["id"] == top["offering_id"]:
+                top = valid[selected["id"]]
+            else:
+                trace.append(event("Catalog validation", "local", "Exact phrase match retained over ambiguous rerank"))
         elif items and items[0].get("action") == "skip":
             # No trustworthy match: don't manufacture an offering decision.
             return response("The catalog match is uncertain. Which support area is involved?", {**state, "phase": "clarify_offering"}, choices=[{"label": o["offering_name"], "value": "offering:" + o["offering_id"]} for o in shortlist[:4]], trace=trace)
     elif not gw.live:
         trace.append(event("Catalog retrieval", "demo", "Local text matching; no Clocked call"))
     elif gw.live:
-        trace.append(event("Catalog fallback", "demo", "Clocked did not return a usable match; local ranking used"))
+        trace.append(event("Catalog fallback", "local", "Clocked unavailable; result will not be presented as a live decision"))
     state = {**state, "offering_id": top["offering_id"], "phase": "qualifying"}
     if top["asset_policy"].lower() in ["required", "required_if_owned"]:
         owned = [a for a in ASSETS if a["user_id"] == user_id and a["status"] == "Active"]
@@ -270,13 +376,13 @@ def continue_classification(state, user_id, gw):
                 types = sorted({a["device_type"] for a in owned if a["device_type"].lower() in ["laptop", "desktop"]})
                 if len(types) > 1:
                     state["phase"] = "asset_type"
-                    return response("I found more than one type of Dell computer assigned to this demo user. Is it the laptop or the desktop?", state, choices=[{"label": x, "value": "device:" + x.lower()} for x in types], trace=trace)
+                    return response("Do you mean a laptop or desktop assigned to this demo user?", state, choices=[{"label": x, "value": "device:" + x.lower()} for x in types], trace=trace)
             matches = choose_asset_candidates(original, user_id, state)
             if len(matches) == 1:
                 state["asset_id"] = matches[0]["asset_id"]
             elif len(matches) > 1:
                 state["phase"] = "asset_choice"
-                return response("I found multiple devices that could match. Which one is affected?", state, card={"type": "assets", "items": [asset_public(a) for a in matches[:8]]}, trace=trace)
+                return response("I found multiple possible devices. Which one is affected? If you're unsure, you can continue without identifying an exact asset.", state, card={"type": "assets", "items": [asset_public(a) for a in matches[:8]]}, choices=[{"label": "I don't know the model", "value": "unknown_asset"}], trace=trace)
             elif not matches:
                 state["phase"] = "asset_choice"
                 return response("I couldn't find that device on this sample profile. You can continue with an unknown asset, or switch demo user.", state, choices=[{"label": "Continue without asset", "value": "unknown_asset"}], trace=trace)
@@ -291,8 +397,12 @@ def check_fields(state, user_id, gw):
         if fid in ("issue_description", "request_description"):
             fields[fid] = state.get("original_text", "")[:200]
         elif fid in ("software_name", "target_application"):
-            if o["ticket_type_id"] == "REQ" and any(x in o["offering_name"].lower() for x in ["visio", "sap"]):
-                fields[fid] = "Microsoft Visio" if "visio" in o["offering_name"].lower() else "SAP"
+            known_apps = {"visio": "Microsoft Visio", "sap": "SAP", "adobe acrobat": "Adobe Acrobat", "microsoft project": "Microsoft Project", "outlook": "Microsoft Outlook", "salesforce": "Salesforce"}
+            description = (o["offering_name"] + " " + state.get("original_text", "")).lower()
+            for name, display in known_apps.items():
+                if name in description:
+                    fields[fid] = display
+                    break
         elif fid == "asset_id" and state.get("asset_id"):
             fields["asset_id"] = state["asset_id"]
     state["fields"] = fields
@@ -316,11 +426,12 @@ def knowledge_answer(doc):
 
 def start_message(text, state, user_id, gw, *, bypass_kb=False):
     q = text.lower()
-    state = {"original_text": text[:350], "phase": "initial", "fields": {}, "preferred_action": "chat" if any(s in q for s in ["live chat", "talk to an agent", "connect me", "speak to an agent"]) else "ticket"}
-    explicit_action = any(s in q for s in ["create a ticket", "raise a ticket", "open a ticket", "connect me", "talk to an agent", "live chat", "speak to an agent"])
+    state = {"original_text": text[:350], "phase": "initial", "fields": {}, "preferred_action": "chat" if explicit_agent(q) else "ticket"}
+    explicit_action = bool(re.search(r"\b(create|raise|open) (?:an? )?ticket\b", q)) or explicit_agent(q)
     local_oos = bool(re.search(r"\b(cricket|football|match score|weather forecast|movie|recipe|celebrity)\b", q)) and not any(x in q for x in ["app", "laptop", "software"])
-    local_incident = bool(re.search(r"\b(broken|crash(?:ing|ed|es)?|not working|isn't working|is not working|doesn't work|wont|won't|cannot|can't|failed|failure|error|slow|offline|outage|stuck|jam|locked|does not|will not|disconnect|dead|lost)\b", q))
-    local_request = bool(re.search(r"\b(request|install(?:ed|ation|ing)?|need (?:a|new)|need [a-z0-9 ]+ installed|replacement|give me access|grant access|access to|order|new laptop|new desktop)\b", q))
+    local_incident = is_incident(q)
+    local_request = is_request(q)
+    gw.traces.append(event("Intent rules", "local", f"Incident keyword signal: {local_incident}; request signal: {local_request}; agent requested: {explicit_agent(q)}"))
     if "password" in q and ("reset" in q or "how" in q) and not "locked" in q:
         local_incident = False
     api_intents = gw.decide_intent(text)
@@ -328,18 +439,22 @@ def start_message(text, state, user_id, gw, *, bypass_kb=False):
         scope = noun_probability(api_intents, "it_support")
         incident = noun_probability(api_intents, "incident")
         sr = noun_probability(api_intents, "service_request")
-        if scope is not None and scope < .37:
+        # Never reject an explicit help, ticket, hardware or agent request based solely on a low score.
+        if scope is not None and scope < .37 and not (local_incident or local_request or explicit_action or re.search(r"\b(help|support|laptop|desktop|computer|account|email|software|printer|device|policy)\b", q)):
             local_oos = True
         if incident is not None and incident >= .69:
             local_incident = True
         if sr is not None and sr >= .69:
             local_request = True
-        if incident is not None and incident < .3:
+        # Specific observed failures outrank a low generic probability; never erase strong evidence.
+        if incident is not None and incident < .3 and not is_incident(q):
             local_incident = False
-        if sr is not None and sr < .3:
+        if sr is not None and sr < .3 and not is_request(q):
             local_request = False
     else:
         gw.traces.append(event("Intent rules", "demo", "Explicit local classification; not a Clocked prediction"))
+    if re.search(r"\b(?:create|open|raise) (?:an? )?ticket about [a-z]+\b", q) and not is_incident(q):
+        return response("Can you clarify what happened? Is this an existing service not working, or are you requesting something new?", {**state, "phase": "clarify_intent"}, choices=[{"label": "Something is broken", "value": "type:INC"}, {"label": "Request a new service", "value": "type:REQ"}], trace=gw.traces)
     if local_oos:
         return response("This workspace focuses on IT and employee service requests. I can help with devices, software, accounts, and technical issues instead.", {}, trace=gw.traces)
     if local_incident and local_request and any(s in q for s in ["broken and", "not working and", "failed and", "crashing and"]):
@@ -352,14 +467,20 @@ def start_message(text, state, user_id, gw, *, bypass_kb=False):
         reranked = gw.rerank_knowledge(text, candidates)
         if reranked:
             found = next((x for x in reranked.get("results", []) if x.get("action") == "use" and float(x.get("relevance_score", 0)) >= .35 and any(x.get("id") == d["document_id"] for d in candidates)), None)
-            if found:
+            if found and found.get("answers_question") is not False:
                 candidate = next(d for d in candidates if d["document_id"] == found["id"])
             else:
                 candidate = None
+                gw.traces.append(event("Knowledge relevance", "local", "Clocked did not confirm that a passage answers the question"))
         elif not gw.live:
             gw.traces.append(event("Knowledge matching", "demo", "Search over fictional local documents"))
         else:
             gw.traces.append(event("Knowledge fallback", "demo", "Clocked was unavailable; local document match used"))
+        if candidate:
+            # A generic laptop-loss article cannot answer a specific screen troubleshooting query.
+            focused_terms = {"screen", "display", "flicker", "black screen", "battery", "keyboard", "printer", "jam"}
+            if any(t in q for t in focused_terms) and not any(t in (candidate["title"] + " " + candidate["text"]).lower() for t in focused_terms if t in q):
+                candidate = None
         if candidate:
             answer = knowledge_answer(candidate)
             grounding = gw.verify_answer(text, candidate, answer) if gw.live else None
@@ -368,6 +489,11 @@ def start_message(text, state, user_id, gw, *, bypass_kb=False):
             if candidate:
                 state.update({"phase": "knowledge", "knowledge_id": candidate["document_id"]})
                 return response("I found a relevant guide in the sample knowledge library. Try these steps, then tell me if the problem is resolved.", state, card={"type": "knowledge", "title": candidate["title"], "id": candidate["document_id"], "excerpt": answer}, choices=[{"label": "That solved it", "value": "resolved"}, {"label": "Still need help", "value": "escalate"}, {"label": "Talk to an agent", "value": "escalate_chat"}], trace=gw.traces)
+    if explicit_action and not local_incident and not local_request:
+        return response("I can help with that. Is something not working, or do you need a new item or access?", {**state, "phase": "clarify_intent"}, choices=[{"label": "Report a problem", "value": "type:INC"}, {"label": "Request something", "value": "type:REQ"}], trace=gw.traces)
+    if local_request and local_incident and not any(s in q for s in ["broken and", "not working and", "failed and", "crashing and"]):
+        if re.search(r"\b(create|open|raise)\s+(?:an? )?ticket\b", q) and not any(s in q for s in ("broken", "crash", "error", "won't", "not working")):
+            return response("Is Outlook failing, or are you requesting a new Outlook service?", {**state, "phase": "clarify_intent"}, choices=[{"label": "Something is broken", "value": "type:INC"}, {"label": "Request a new service", "value": "type:REQ"}], trace=gw.traces)
     if not local_incident and not local_request and not explicit_action:
         return response("Could you tell me a little more about what you need? For example, is something broken, or are you requesting access or software?", {**state, "phase": "clarify_intent"}, choices=[{"label": "Something is broken", "value": "type:INC"}, {"label": "Request something", "value": "type:REQ"}], trace=gw.traces)
     ticket_type = "INC" if local_incident else "REQ"
@@ -376,12 +502,16 @@ def start_message(text, state, user_id, gw, *, bypass_kb=False):
 
 
 def action_message(action, state, user_id, gw, details=None):
-    if action == "resolved":
+    if action == "resolved" and state.get("phase") == "knowledge":
         return response("Glad the guide helped. This demonstration is now complete. You can start another request anytime.", {}, card={"type": "complete", "title": "Issue resolved", "subtext": "No ticket was created."}, trace=gw.traces)
     if action in ("escalate", "escalate_chat") and state.get("phase") == "knowledge":
         state["preferred_action"] = "chat" if action == "escalate_chat" else "ticket"
         q = state.get("original_text", "")
-        state["ticket_type"] = "INC" if any(s in q.lower() for s in ["not", "broken", "can't", "error", "failed", "slow", "issue", "crash"]) else "REQ"
+        state["ticket_type"] = "INC" if is_incident(q) else "REQ" if is_request(q) else ""
+        gw.traces.append(event("Escalation classification", "local", "Derived ticket type from original issue rather than button text"))
+        if not state["ticket_type"]:
+            state["phase"] = "clarify_intent"
+            return response("Is this an existing service that stopped working, or a request for something new?", state, choices=[{"label": "Report a problem", "value": "type:INC"}, {"label": "Request something", "value": "type:REQ"}], trace=gw.traces)
         return continue_classification(state, user_id, gw)
     if action.startswith("type:") and state.get("phase") in ["multi_intent", "clarify_intent"]:
         state["ticket_type"] = action.split(":", 1)[1]
@@ -402,7 +532,7 @@ def action_message(action, state, user_id, gw, details=None):
             return response("Please describe what happens when you use this device. For example, does it display an error, freeze, or disconnect?", state, trace=gw.traces)
         if symptom not in ("power", "slow") or (symptom == "slow" and state.get("asset_type") != "laptop"):
             return response("Please choose a valid symptom.", state, trace=gw.traces)
-        state["original_text"] += " " + ("laptop extremely slow freezing" if symptom == "slow" else state["asset_type"] + " will not power on start")
+        state["original_text"] = state["original_text"].strip() + ("; laptop is extremely slow or freezing" if symptom == "slow" else "; " + state["asset_type"] + " will not power on")
         return continue_classification(state, user_id, gw)
     if action.startswith("asset:") and state.get("phase") == "asset_choice":
         asset_id = action.split(":", 1)[1]
@@ -411,6 +541,8 @@ def action_message(action, state, user_id, gw, details=None):
         state["asset_id"] = asset_id
         return check_fields(state, user_id, gw)
     if action == "unknown_asset" and state.get("phase") == "asset_choice":
+        state["asset_id"] = None
+        state["phase"] = "qualifying"
         return check_fields(state, user_id, gw)
     if action.startswith("offering:") and state.get("phase") == "clarify_offering":
         offering = action.split(":", 1)[1]
@@ -459,21 +591,86 @@ def health():
     return jsonify({"ok": True, "status": "ready"})
 
 
+@app.after_request
+def security_headers(resp):
+    resp.headers["X-Content-Type-Options"] = "nosniff"
+    resp.headers["X-Frame-Options"] = "DENY"
+    resp.headers["Referrer-Policy"] = "no-referrer"
+    resp.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    return resp
+
+
+@app.errorhandler(400)
+@app.errorhandler(404)
+@app.errorhandler(405)
+@app.errorhandler(413)
+def api_http_error(err):
+    if request.path.startswith('/api/'):
+        return jsonify({"error": getattr(err, "description", "Invalid request")}), err.code
+    return err
+
+
+def validated_input():
+    if not request.is_json:
+        raise ValueError("Please send a JSON request.")
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict):
+        raise ValueError("Invalid request body.")
+    user_id = data.get("user_id", "DEMO001")
+    if not isinstance(user_id, str) or user_id not in USERS:
+        raise ValueError("Please select a valid demo user.")
+    return data, user_id, verify_state(data, user_id)
+
+
+def finish_result(result, user_id, gw):
+    if gw.unavailable:
+        # A real outage or limit must never silently change the outcome to local classification.
+        return jsonify({"error": "Clocked is temporarily unavailable or busy. Please retry shortly. No action was taken.", "trace": gw.traces}), 503
+    result["state_token"] = sealed_state(result.get("state", {}), user_id)
+    return jsonify(result)
+
+
 @app.post("/api/chat")
 def api_chat():
-    data = request.get_json(silent=True) or {}
-    text = str(data.get("text") or "").strip()[:1000]
-    user_id = str(data.get("user_id") or "DEMO001")
-    if not text or user_id not in USERS:
-        return jsonify({"error": "Provide a message and a valid demo user."}), 400
-    state = clean_state(data.get("state"))
+    try:
+        data, user_id, state = validated_input()
+        text = data.get("text")
+        if not isinstance(text, str) or not text.strip():
+            raise ValueError("Provide a message.")
+        text = text.strip()[:1000]
+    except ValueError as err:
+        return jsonify({"error": str(err)}), 400
     gw = ClockedGateway()
     try:
-        if state.get("phase") == "missing_field":
+        if state and re.match(r"^(?:actually|sorry|i meant)", text.lower()):
+            previous = state.get("original_text", "")
+            device = re.search(r"\b(dell|lenovo|hp|apple|samsung)\b", text.lower())
+            software = re.search(r"\b(?:visio|microsoft project|adobe acrobat|sap|outlook|salesforce)\b", text.lower())
+            if device and state.get("ticket_type") == "INC":
+                updated = re.sub(r"\b(dell|lenovo|hp|apple|samsung)\b", device.group(0), previous, flags=re.I)
+                if updated == previous:
+                    updated = previous + "; affected device is " + text
+                state.update({"original_text": updated, "asset_id": None, "asset_type": None, "offering_id": None})
+                gw.traces.append(event("Conversation correction", "local", "Reevaluating device with the previous issue preserved"))
+                result = continue_classification(state, user_id, gw)
+            elif software:
+                task = "install" if re.search(r"\binstall\b", previous.lower()) else "request access to" if "access" in previous.lower() else "request"
+                gw.traces.append(event("Conversation correction", "local", "Reclassifying the corrected application"))
+                result = start_message(task + " " + software.group(0), {}, user_id, gw, bypass_kb=True)
+            else:
+                gw.traces.append(event("Conversation correction", "local", "A new clarification is required"))
+                result = start_message(text, {}, user_id, gw)
+        elif state and new_intent_during_flow(text):
+            gw.traces.append(event("Conversation reset", "local", "A new request superseded the prior workflow"))
+            result = start_message(text, {}, user_id, gw)
+        elif state.get("phase") == "missing_field":
             result = action_message("submit_field", state, user_id, gw, {"text": text})
         elif state.get("phase") == "asset_choice":
-            matched = next((a for a in choose_asset_candidates(text, user_id, state) if a["asset_id"].lower() in text.lower() or a["model"].lower() in text.lower()), None)
-            result = action_message("asset:" + matched["asset_id"], state, user_id, gw) if matched else response("Please select one of the listed devices so I don't guess.", state, trace=gw.traces)
+            if re.search(r"\b(don'?t know|not sure|unknown|cannot identify)\b", text.lower()):
+                result = action_message("unknown_asset", state, user_id, gw)
+            else:
+                matched = next((a for a in choose_asset_candidates(text, user_id, state) if a["asset_id"].lower() in text.lower() or a["model"].lower() in text.lower()), None)
+                result = action_message("asset:" + matched["asset_id"], state, user_id, gw) if matched else response("I can't identify that device yet. Please choose a listed device or say 'I don't know the model'.", state, choices=[{"label": "Continue without identifying asset", "value": "unknown_asset"}], trace=gw.traces)
         elif state.get("phase") == "asset_type" and any(w in text.lower() for w in ("laptop", "desktop")):
             kind = "desktop" if "desktop" in text.lower() else "laptop"
             result = action_message("device:" + kind, state, user_id, gw)
@@ -486,22 +683,29 @@ def api_chat():
             result = action_message("symptom:" + symptom, state, user_id, gw)
         else:
             result = start_message(text, state, user_id, gw)
-        return jsonify(result)
+        return finish_result(result, user_id, gw)
     finally:
         gw.close()
 
 
 @app.post("/api/action")
 def api_action():
-    data = request.get_json(silent=True) or {}
-    user_id = str(data.get("user_id") or "DEMO001")
-    if user_id not in USERS:
-        return jsonify({"error": "Invalid demo user"}), 400
-    state = clean_state(data.get("state"))
-    action = str(data.get("action") or "")[:100]
+    try:
+        data, user_id, state = validated_input()
+        action = data.get("action")
+        if not isinstance(action, str) or not action or len(action) > 120:
+            raise ValueError("Invalid action.")
+        details = data.get("details")
+        if details is not None and not isinstance(details, dict):
+            raise ValueError("Invalid action details.")
+        if not state.get("phase"):
+            raise ValueError("No active workflow. Please start a conversation.")
+    except ValueError as err:
+        return jsonify({"error": str(err)}), 400
     gw = ClockedGateway()
     try:
-        return jsonify(action_message(action, state, user_id, gw, data.get("details")))
+        result = action_message(action, state, user_id, gw, details)
+        return finish_result(result, user_id, gw)
     finally:
         gw.close()
 
