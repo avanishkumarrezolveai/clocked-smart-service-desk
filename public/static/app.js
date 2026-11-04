@@ -7,6 +7,7 @@ const els = {
   engineDescription: $('engine-description'), voice: $('voice-button'), voiceCaption: $('voice-caption'), toast: $('toast')
 };
 let conversationState = {};
+let stateToken = null;
 let isLoading = false;
 let currentMode = 'demo';
 let traceHistory = [];
@@ -91,7 +92,7 @@ function addReview(body, card) {
   const grid = node('div', 'review-grid');
   [
     ['Ticket type', r.ticket_type], ['Offering', r.offering], ['Category', r.category],
-    ['Subcategory', r.subcategory], ['Asset', r.asset], ['Reference', r.offering_id], ['Summary', r.summary]
+    ['Subcategory', r.subcategory], ['Asset', r.asset], ['Catalog offering ID', r.offering_id], ['Summary', r.summary]
   ].forEach(([k, v]) => {
     const item = node('div', 'review-item' + (k === 'Summary' ? ' wide' : ''));
     const label = node('label', '', k);
@@ -131,6 +132,7 @@ function disablePreviousActions() {
 function renderResult(result) {
   if (!result || typeof result.message !== 'string') throw new Error('Unexpected server response');
   conversationState = result.state || {};
+  stateToken = result.state_token || null;
   disablePreviousActions();
   const body = makeMessage('assistant', result.message);
   const card = result.card || {};
@@ -157,7 +159,10 @@ async function post(path, data) {
   try {
     const res = await fetch(path, {method:'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data), signal: controller.signal});
     const json = await res.json();
-    if (!res.ok) throw new Error(json.error || 'Request failed');
+    if (!res.ok) {
+      if (Array.isArray(json.trace)) appendTraces(json.trace);
+      throw new Error(json.error || 'Request failed');
+    }
     return json;
   } finally { clearTimeout(timer); }
 }
@@ -170,12 +175,12 @@ async function sendText(text) {
   setLoading(true);
   const typing = showTyping();
   try {
-    const result = await post('/api/chat', {text, user_id: els.user.value, state: conversationState});
+    const result = await post('/api/chat', {text, user_id: els.user.value, state: conversationState, state_token: stateToken});
     typing.remove();
     renderResult(result);
   } catch (e) {
     typing.remove();
-    makeMessage('assistant', e.name === 'AbortError' ? 'The request took too long. Please try again.' : 'I could not complete that request. Please retry, or start a new conversation.');
+    makeMessage('assistant', e.name === 'AbortError' ? 'The request took too long. Please try again.' : e.message);
     notify('Connection issue: ' + e.message);
   } finally { setLoading(false); }
 }
@@ -185,12 +190,12 @@ async function runAction(action, label) {
   setLoading(true);
   const typing = showTyping();
   try {
-    const result = await post('/api/action', {action, user_id: els.user.value, state: conversationState});
+    const result = await post('/api/action', {action, user_id: els.user.value, state: conversationState, state_token: stateToken});
     typing.remove();
     renderResult(result);
   } catch (e) {
     typing.remove();
-    makeMessage('assistant', 'The action could not be completed. Please try again.');
+    makeMessage('assistant', e.message);
     notify('Action failed: ' + e.message);
   } finally { setLoading(false); }
 }
@@ -207,7 +212,7 @@ function appendTraces(events) {
     card.append(top);
     const headline = item.origin === 'live' ? 'Clocked API completed' : item.origin === 'error' ? 'Clocked request failed' : 'Local workflow step';
     card.append(node('strong', '', headline));
-    card.append(node('div', 'trace-detail', [item.detail, Number.isFinite(item.duration_ms) ? `${item.duration_ms} ms` : ''].filter(Boolean).join(' · ')));
+    card.append(node('div', 'trace-detail', [item.detail, Number.isFinite(item.duration_ms) ? `${Number(item.duration_ms).toFixed(1)} ms` : ''].filter(Boolean).join(' · ')));
     if (item.result && typeof item.result === 'object') {
       const details = node('details');
       details.append(node('summary', '', 'Inspect API response'));
@@ -229,6 +234,7 @@ function resetTraces() {
 function newConversation() {
   if (isLoading) return;
   conversationState = {};
+  stateToken = null;
   els.messages.textContent = '';
   els.welcome.hidden = false;
   els.input.value = '';
@@ -239,6 +245,13 @@ function newConversation() {
 }
 function toggleInspector(show) {
   els.inspector.classList.toggle('open', show);
+  if (window.matchMedia('(max-width: 1080px)').matches) {
+    els.inspector.inert = !show;
+    els.inspector.setAttribute('aria-hidden', String(!show));
+  } else {
+    els.inspector.inert = false;
+    els.inspector.removeAttribute('aria-hidden');
+  }
   $('nav-decisions').classList.toggle('active', show);
   $('nav-support').classList.toggle('active', !show);
   if (show) els.inspector.querySelector('.inspector-close').focus();
@@ -307,4 +320,13 @@ $('nav-support').addEventListener('click', () => toggleInspector(false));
 $('close-inspector').addEventListener('click', () => toggleInspector(false));
 $('clear-trace').addEventListener('click', resetTraces);
 document.addEventListener('keydown', e => {if (e.key === 'Escape') toggleInspector(false);});
+window.addEventListener('resize', () => {
+  if (window.matchMedia('(max-width: 1080px)').matches) {
+    els.inspector.inert = !els.inspector.classList.contains('open');
+  } else {
+    els.inspector.inert = false;
+    els.inspector.removeAttribute('aria-hidden');
+  }
+});
+if (window.matchMedia('(max-width: 1080px)').matches) els.inspector.inert = true;
 setupVoice(); loadStatus();
