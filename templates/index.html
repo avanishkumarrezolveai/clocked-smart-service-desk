@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9fb">
+  <meta name="description" content="A beautifully simple, evidence-led IT service desk demo powered by Clocked.">
+  <title>Clocked · Smart Service Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700;750&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Clocked Smart Service Desk home">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-word">clocked<span class="brand-period">.</span></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="primary-nav" aria-label="Workspace">
+        <button class="nav-item active" type="button" id="nav-support" aria-current="page"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10h8M8 13h5"/></svg><span>Service desk</span><span class="nav-indicator"></span></button>
+        <button class="nav-item" type="button" id="nav-decisions"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Decision inspector</span></button>
+      </nav>
+      <div class="sidebar-label modules-label">DEMONSTRATION</div>
+      <div class="module-list">
+        <div><span class="module-icon">✦</span> Knowledge</div>
+        <div><span class="module-icon">◇</span> Assets</div>
+        <div><span class="module-icon">▤</span> Tickets</div>
+        <div><span class="module-icon">◉</span> Voice & chat</div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="demo-mark"><span class="tiny-orbit"></span><div><strong>Experience preview</strong><small>Fictional data only</small></div></div>
+        <p>Built to demonstrate how intelligent decisions improve everyday support.</p>
+        <div class="sidebar-footer">CLOCKED STUDIO <span>© 2026</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel" id="service-panel">
+      <header class="topbar">
+        <div class="topbar-title"><span class="breadcrumb">Workspace</span><span class="breadcrumb-slash">/</span><strong>Smart Service Desk</strong></div>
+        <div class="topbar-actions">
+          <span class="status-pill" id="mode-pill"><span class="status-dot"></span><span id="mode-text">Loading</span></span>
+          <button type="button" class="icon-button" id="reset-button" aria-label="Start a new conversation" title="New conversation"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16"/></svg></button>
+          <span class="avatar" aria-label="Demo workspace">D</span>
+        </div>
+      </header>
+      <section class="conversation-wrap" aria-label="Chat experience">
+        <div class="conversation-content" id="conversation-content">
+          <div class="welcome" id="welcome">
+            <div class="eyebrow"><span class="eyebrow-line"></span> SUPPORT, REIMAGINED</div>
+            <div class="welcome-glyph" aria-hidden="true"><span class="glyph-cross">✳</span></div>
+            <h1>Good support starts<br>with <em>understanding.</em></h1>
+            <p>Ask a question, report an issue, or request something new. We’ll find the right next step, together.</p>
+            <div class="suggestion-heading">A FEW THINGS TO TRY</div>
+            <div class="suggestion-grid" id="suggestions">
+              <button type="button" class="suggestion" data-prompt="My Dell computer isn't working"><span class="suggestion-icon lavender">◈</span><span class="suggestion-copy"><strong>Something isn't working</strong><small>Get help with a device</small></span><span class="suggestion-arrow">↗</span></button>
+              <button type="button" class="suggestion" data-prompt="How do I reset my password?"><span class="suggestion-icon mint">⌘</span><span class="suggestion-copy"><strong>Find a quick answer</strong><small>Search the knowledge library</small></span><span class="suggestion-arrow">↗</span></button>
+              <button type="button" class="suggestion" data-prompt="I need Microsoft Visio installed"><span class="suggestion-icon sand">▦</span><span class="suggestion-copy"><strong>Request a service</strong><small>Software, access and more</small></span><span class="suggestion-arrow">↗</span></button>
+              <button type="button" class="suggestion" data-prompt="My laptop won't turn on. I want to speak to an agent"><span class="suggestion-icon blush">◉</span><span class="suggestion-copy"><strong>Talk to support</strong><small>Explore a chat handoff</small></span><span class="suggestion-arrow">↗</span></button>
+            </div>
+          </div>
+          <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+        </div>
+      </section>
+      <section class="composer-section" aria-label="Message composer">
+        <div class="composer-top"><label for="demo-user">EXPERIENCE AS</label><div class="select-wrap"><span class="select-avatar">D</span><select id="demo-user" aria-label="Demo user"><option value="DEMO001">Demo User One</option></select><span class="chevron">⌄</span></div><button type="button" class="trace-shortcut" id="show-inspector">View decision inspector <span>↗</span></button></div>
+        <form id="chat-form" class="composer" autocomplete="off">
+          <textarea id="message-input" name="message" rows="1" maxlength="1000" placeholder="Ask me anything about IT support…" aria-label="Type your message"></textarea>
+          <div class="composer-toolbar"><div class="composer-tools"><button type="button" id="voice-button" class="tool-button" aria-label="Use microphone" title="Dictate a message"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M8.5 21h7"/></svg></button><span id="voice-caption">Use voice or keyboard</span></div><button id="send-button" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 14-7-4.5 14L12 13l-7-1Z"/><path d="m12 13 7-8"/></svg></button></div>
+        </form>
+        <div class="composer-footnote">This is a fictional demonstration. Ticket creation and live chat are simulated.</div>
+      </section>
+    </main>
+
+    <aside id="inspector" class="inspector" aria-label="Clocked decision inspector">
+      <header class="inspector-header"><div class="inspector-title"><span class="inspector-icon">◎</span><div><strong>Decision inspector</strong><small>See what drives each response</small></div></div><button class="inspector-close" type="button" id="close-inspector" aria-label="Close inspector">×</button></header>
+      <div class="inspector-body">
+        <div class="inspector-section-label">ENGINE STATUS</div>
+        <div class="engine-card"><div class="engine-card-top"><span class="engine-ring">✳</span><div><strong>Clocked intelligence</strong><small id="engine-subtitle">Checking connection</small></div></div><span id="engine-tag" class="engine-tag">Loading</span><p id="engine-description">Loading the environment configuration.</p></div>
+        <div class="inspector-section-label">HOW IT WORKS</div>
+        <div class="workflow-steps"><div><span>01</span><p><strong>Understand</strong><small>Determine the request and its context</small></p></div><div><span>02</span><p><strong>Find</strong><small>Retrieve relevant articles and offerings</small></p></div><div><span>03</span><p><strong>Verify</strong><small>Review evidence and validate records</small></p></div><div><span>04</span><p><strong>Act</strong><small>Present a safe, confirmed next step</small></p></div></div>
+        <div class="inspector-trace-header"><div><span class="inspector-section-label">DECISION ACTIVITY</span><span class="trace-counter" id="trace-count">0 events</span></div><button id="clear-trace" type="button">Clear</button></div>
+        <div id="trace-events" class="trace-events"><div class="trace-empty"><span>◎</span><strong>No activity yet</strong><p>Make a request to see the decisions, validations and actions that shaped the response.</p></div></div>
+      </div>
+      <footer class="inspector-footer"><span class="footer-dot"></span> Explicit traces. No fabricated API results.</footer>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

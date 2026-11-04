@@ -1,0 +1,47 @@
+﻿case_id,user_id,user_query,expected_route,expected_ticket_type,expected_offering_id,asset_expected,expected_follow_up
+T001,DEMO001,How do I reset my password?,KNOWLEDGE,,,no,Show KB001; no asset inquiry
+T002,DEMO001,My Dell laptop will not turn on,KNOWLEDGE_THEN_TICKETING,INC,INC001,conditional,Ask which Dell laptop if escalating
+T003,DEMO001,My Dell computer is broken,KNOWLEDGE_THEN_TICKETING,INC,INC001,conditional,"Ask laptop versus desktop, then model"
+T004,DEMO003,I need Microsoft Visio installed,TICKETING,REQ,REQ011,no,Do not require an asset
+T005,DEMO001,Install Adobe Acrobat on my laptop,TICKETING,REQ,REQ012,no,Do not route to hardware merely because laptop is mentioned
+T006,DEMO002,I want SAP access,TICKETING,REQ,REQ021,no,Classify as an access request
+T007,DEMO002,The VPN is no longer connecting,KNOWLEDGE_THEN_TICKETING,INC,INC004,no,Show KB003 then escalation if unresolved
+T008,DEMO001,My Outlook keeps crashing,TICKETING,INC,INC003,no,Application crash is an incident
+T009,DEMO001,Connect me to a live chat agent about my broken laptop,LIVE_CHAT,INC,INC001,conditional,Prepare classification before simulated handoff
+T010,DEMO001,What is the capital of France?,OUT_OF_SCOPE,,,no,Do not create a ticket
+T011,DEMO001,My laptop is broken and I need a new one,MULTIPLE_INTENTS,INC,INC001,conditional,Separate incident and new laptop request; ask confirmation
+T012,DEMO001,I need some help with a computer,CLARIFY,,,conditional,Ask whether broken device or new device
+T013,DEMO001,Can I get a new work laptop?,TICKETING,REQ,REQ001,no,"New request, no exact affected asset required"
+T014,DEMO004,My monitor is flickering,TICKETING,INC,INC001,conditional,"If no monitor incident offering exists, clarify or general hardware incident"
+T015,DEMO003,Where is the maternity leave policy?,KNOWLEDGE_NO_MATCH,,,no,"No supported article, offer appropriate support"
+T016,DEMO001,I need to request a replacement battery,TICKETING,REQ,REQ007,conditional,Asset needed only if configured and identifiable
+T017,DEMO002,Can you connect me to someone?,LIVE_CHAT,,,no,Ask issue description first; do not fabricate ticket details
+T018,DEMO001,I cannot access a shared drive I used yesterday,KNOWLEDGE_THEN_TICKETING,INC,INC009,no,"Search KB007, then incident if unresolved"
+T019,DEMO001,The printer has a paper jam,KNOWLEDGE_THEN_TICKETING,INC,INC007,conditional,Search KB006 and record relevant printer asset
+T020,DEMO002,I need my MFA re-enrolled,TICKETING,REQ,REQ027,no,MFA Enrollment is a request
+T021,DEMO001,Please help me with request salesforce access,TICKETING,REQ,REQ022,no,Match catalog entry and validate category and subcategory
+T022,DEMO001,Please help me with request hr portal access,TICKETING,REQ,REQ023,no,Match catalog entry and validate category and subcategory
+T023,DEMO001,Please help me with request shared mailbox access,TICKETING,REQ,REQ024,no,Match catalog entry and validate category and subcategory
+T024,DEMO001,Please help me with request admin privileges,TICKETING,REQ,REQ025,no,Match catalog entry and validate category and subcategory
+T025,DEMO001,Please help me with request role change,TICKETING,REQ,REQ026,no,Match catalog entry and validate category and subcategory
+T026,DEMO001,Please help me with request mfa enrollment,TICKETING,REQ,REQ027,no,Match catalog entry and validate category and subcategory
+T027,DEMO001,Please help me with request sso application access,TICKETING,REQ,REQ028,no,Match catalog entry and validate category and subcategory
+T028,DEMO001,Please help me with request guest account,TICKETING,REQ,REQ029,no,Match catalog entry and validate category and subcategory
+T029,DEMO001,Please help me with request account reactivation,TICKETING,REQ,REQ030,no,Match catalog entry and validate category and subcategory
+T030,DEMO001,Please help me with request vpn access,TICKETING,REQ,REQ031,no,Match catalog entry and validate category and subcategory
+T031,DEMO001,Please help me with request wifi access,TICKETING,REQ,REQ032,no,Match catalog entry and validate category and subcategory
+T032,DEMO001,Please help me with request wired network port,TICKETING,REQ,REQ033,no,Match catalog entry and validate category and subcategory
+T033,DEMO001,Please help me with request static ip,TICKETING,REQ,REQ034,no,Match catalog entry and validate category and subcategory
+T034,DEMO001,Please help me with request network firewall rule,TICKETING,REQ,REQ035,no,Match catalog entry and validate category and subcategory
+T035,DEMO001,Please help me with request guest wifi,TICKETING,REQ,REQ036,no,Match catalog entry and validate category and subcategory
+T036,DEMO001,Please help me with request network drive mapping,TICKETING,REQ,REQ037,no,Match catalog entry and validate category and subcategory
+T037,DEMO001,Please help me with request remote access setup,TICKETING,REQ,REQ038,no,Match catalog entry and validate category and subcategory
+T038,DEMO001,Please help me with request dns record,TICKETING,REQ,REQ039,no,Match catalog entry and validate category and subcategory
+T039,DEMO001,Please help me with request network configuration change,TICKETING,REQ,REQ040,no,Match catalog entry and validate category and subcategory
+T040,DEMO001,Please help me with create distribution list,TICKETING,REQ,REQ041,no,Match catalog entry and validate category and subcategory
+T041,DEMO001,Please help me with create shared mailbox,TICKETING,REQ,REQ042,no,Match catalog entry and validate category and subcategory
+T042,DEMO001,Please help me with request mailbox quota increase,TICKETING,REQ,REQ043,no,Match catalog entry and validate category and subcategory
+T043,DEMO001,Please help me with configure email alias,TICKETING,REQ,REQ044,no,Match catalog entry and validate category and subcategory
+T044,DEMO001,Please help me with request mailing list membership,TICKETING,REQ,REQ045,no,Match catalog entry and validate category and subcategory
+T045,DEMO001,Please help me with create teams channel,TICKETING,REQ,REQ046,no,Match catalog entry and validate category and subcategory
+T046,DEMO001,Please help me with create sharepoint site,TICKETING,REQ,REQ047,no,Match catalog entry and validate category and subcategory

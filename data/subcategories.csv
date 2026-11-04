@@ -1,0 +1,261 @@
+﻿subcategory_id,category_id,subcategory_name,description,active
+SUB001,CAT001,Unable to start or launch,Unable to start or launch within Endpoint Hardware,true
+SUB002,CAT001,Partial or inconsistent operation,Partial or inconsistent operation within Endpoint Hardware,true
+SUB003,CAT002,Intermittent failures,Intermittent failures within Endpoint Hardware,true
+SUB004,CAT003,Installation and setup,Installation and setup within Endpoint Hardware,true
+SUB005,CAT003,Specialised setup,Specialised setup within Endpoint Hardware,true
+SUB006,CAT004,Access assignment,Access assignment within Endpoint Hardware,true
+SUB007,CAT005,Settings configuration,Settings configuration within Endpoint Hardware,true
+SUB008,CAT005,Advanced configuration,Advanced configuration within Endpoint Hardware,true
+SUB009,CAT006,Upgrade request,Upgrade request within Endpoint Hardware,true
+SUB010,CAT007,New provisioning,New provisioning within Endpoint Hardware,true
+SUB011,CAT008,Replacement or return,Replacement or return within Endpoint Hardware,true
+SUB012,CAT009,License or approval,License or approval within Endpoint Hardware,true
+SUB013,CAT010,Change to existing service,Change to existing service within Endpoint Hardware,true
+SUB014,CAT011,Unable to start or launch,Unable to start or launch within Software & Applications,true
+SUB015,CAT011,Partial or inconsistent operation,Partial or inconsistent operation within Software & Applications,true
+SUB016,CAT012,Intermittent failures,Intermittent failures within Software & Applications,true
+SUB017,CAT013,Installation and setup,Installation and setup within Software & Applications,true
+SUB018,CAT013,Specialised setup,Specialised setup within Software & Applications,true
+SUB019,CAT014,Access assignment,Access assignment within Software & Applications,true
+SUB020,CAT015,Settings configuration,Settings configuration within Software & Applications,true
+SUB021,CAT015,Advanced configuration,Advanced configuration within Software & Applications,true
+SUB022,CAT016,Upgrade request,Upgrade request within Software & Applications,true
+SUB023,CAT017,New provisioning,New provisioning within Software & Applications,true
+SUB024,CAT018,Replacement or return,Replacement or return within Software & Applications,true
+SUB025,CAT019,License or approval,License or approval within Software & Applications,true
+SUB026,CAT020,Change to existing service,Change to existing service within Software & Applications,true
+SUB027,CAT021,Unable to start or launch,Unable to start or launch within Identity & Access,true
+SUB028,CAT021,Partial or inconsistent operation,Partial or inconsistent operation within Identity & Access,true
+SUB029,CAT022,Intermittent failures,Intermittent failures within Identity & Access,true
+SUB030,CAT023,Installation and setup,Installation and setup within Identity & Access,true
+SUB031,CAT023,Specialised setup,Specialised setup within Identity & Access,true
+SUB032,CAT024,Access assignment,Access assignment within Identity & Access,true
+SUB033,CAT025,Settings configuration,Settings configuration within Identity & Access,true
+SUB034,CAT025,Advanced configuration,Advanced configuration within Identity & Access,true
+SUB035,CAT026,Upgrade request,Upgrade request within Identity & Access,true
+SUB036,CAT027,New provisioning,New provisioning within Identity & Access,true
+SUB037,CAT028,Replacement or return,Replacement or return within Identity & Access,true
+SUB038,CAT029,License or approval,License or approval within Identity & Access,true
+SUB039,CAT030,Change to existing service,Change to existing service within Identity & Access,true
+SUB040,CAT031,Unable to start or launch,Unable to start or launch within Network & Connectivity,true
+SUB041,CAT031,Partial or inconsistent operation,Partial or inconsistent operation within Network & Connectivity,true
+SUB042,CAT032,Intermittent failures,Intermittent failures within Network & Connectivity,true
+SUB043,CAT033,Installation and setup,Installation and setup within Network & Connectivity,true
+SUB044,CAT033,Specialised setup,Specialised setup within Network & Connectivity,true
+SUB045,CAT034,Access assignment,Access assignment within Network & Connectivity,true
+SUB046,CAT035,Settings configuration,Settings configuration within Network & Connectivity,true
+SUB047,CAT035,Advanced configuration,Advanced configuration within Network & Connectivity,true
+SUB048,CAT036,Upgrade request,Upgrade request within Network & Connectivity,true
+SUB049,CAT037,New provisioning,New provisioning within Network & Connectivity,true
+SUB050,CAT038,Replacement or return,Replacement or return within Network & Connectivity,true
+SUB051,CAT039,License or approval,License or approval within Network & Connectivity,true
+SUB052,CAT040,Change to existing service,Change to existing service within Network & Connectivity,true
+SUB053,CAT041,Unable to start or launch,Unable to start or launch within Email & Collaboration,true
+SUB054,CAT041,Partial or inconsistent operation,Partial or inconsistent operation within Email & Collaboration,true
+SUB055,CAT042,Intermittent failures,Intermittent failures within Email & Collaboration,true
+SUB056,CAT043,Installation and setup,Installation and setup within Email & Collaboration,true
+SUB057,CAT043,Specialised setup,Specialised setup within Email & Collaboration,true
+SUB058,CAT044,Access assignment,Access assignment within Email & Collaboration,true
+SUB059,CAT045,Settings configuration,Settings configuration within Email & Collaboration,true
+SUB060,CAT045,Advanced configuration,Advanced configuration within Email & Collaboration,true
+SUB061,CAT046,Upgrade request,Upgrade request within Email & Collaboration,true
+SUB062,CAT047,New provisioning,New provisioning within Email & Collaboration,true
+SUB063,CAT048,Replacement or return,Replacement or return within Email & Collaboration,true
+SUB064,CAT049,License or approval,License or approval within Email & Collaboration,true
+SUB065,CAT050,Change to existing service,Change to existing service within Email & Collaboration,true
+SUB066,CAT051,Unable to start or launch,Unable to start or launch within Printing & Scanning,true
+SUB067,CAT051,Partial or inconsistent operation,Partial or inconsistent operation within Printing & Scanning,true
+SUB068,CAT052,Intermittent failures,Intermittent failures within Printing & Scanning,true
+SUB069,CAT053,Installation and setup,Installation and setup within Printing & Scanning,true
+SUB070,CAT053,Specialised setup,Specialised setup within Printing & Scanning,true
+SUB071,CAT054,Access assignment,Access assignment within Printing & Scanning,true
+SUB072,CAT055,Settings configuration,Settings configuration within Printing & Scanning,true
+SUB073,CAT055,Advanced configuration,Advanced configuration within Printing & Scanning,true
+SUB074,CAT056,Upgrade request,Upgrade request within Printing & Scanning,true
+SUB075,CAT057,New provisioning,New provisioning within Printing & Scanning,true
+SUB076,CAT058,Replacement or return,Replacement or return within Printing & Scanning,true
+SUB077,CAT059,License or approval,License or approval within Printing & Scanning,true
+SUB078,CAT060,Change to existing service,Change to existing service within Printing & Scanning,true
+SUB079,CAT061,Unable to start or launch,Unable to start or launch within Mobile & Telephony,true
+SUB080,CAT061,Partial or inconsistent operation,Partial or inconsistent operation within Mobile & Telephony,true
+SUB081,CAT062,Intermittent failures,Intermittent failures within Mobile & Telephony,true
+SUB082,CAT063,Installation and setup,Installation and setup within Mobile & Telephony,true
+SUB083,CAT063,Specialised setup,Specialised setup within Mobile & Telephony,true
+SUB084,CAT064,Access assignment,Access assignment within Mobile & Telephony,true
+SUB085,CAT065,Settings configuration,Settings configuration within Mobile & Telephony,true
+SUB086,CAT065,Advanced configuration,Advanced configuration within Mobile & Telephony,true
+SUB087,CAT066,Upgrade request,Upgrade request within Mobile & Telephony,true
+SUB088,CAT067,New provisioning,New provisioning within Mobile & Telephony,true
+SUB089,CAT068,Replacement or return,Replacement or return within Mobile & Telephony,true
+SUB090,CAT069,License or approval,License or approval within Mobile & Telephony,true
+SUB091,CAT070,Change to existing service,Change to existing service within Mobile & Telephony,true
+SUB092,CAT071,Unable to start or launch,Unable to start or launch within Storage & File Services,true
+SUB093,CAT071,Partial or inconsistent operation,Partial or inconsistent operation within Storage & File Services,true
+SUB094,CAT072,Intermittent failures,Intermittent failures within Storage & File Services,true
+SUB095,CAT073,Installation and setup,Installation and setup within Storage & File Services,true
+SUB096,CAT073,Specialised setup,Specialised setup within Storage & File Services,true
+SUB097,CAT074,Access assignment,Access assignment within Storage & File Services,true
+SUB098,CAT075,Settings configuration,Settings configuration within Storage & File Services,true
+SUB099,CAT075,Advanced configuration,Advanced configuration within Storage & File Services,true
+SUB100,CAT076,Upgrade request,Upgrade request within Storage & File Services,true
+SUB101,CAT077,New provisioning,New provisioning within Storage & File Services,true
+SUB102,CAT078,Replacement or return,Replacement or return within Storage & File Services,true
+SUB103,CAT079,License or approval,License or approval within Storage & File Services,true
+SUB104,CAT080,Change to existing service,Change to existing service within Storage & File Services,true
+SUB105,CAT081,Unable to start or launch,Unable to start or launch within Security & Compliance,true
+SUB106,CAT081,Partial or inconsistent operation,Partial or inconsistent operation within Security & Compliance,true
+SUB107,CAT082,Intermittent failures,Intermittent failures within Security & Compliance,true
+SUB108,CAT083,Installation and setup,Installation and setup within Security & Compliance,true
+SUB109,CAT083,Specialised setup,Specialised setup within Security & Compliance,true
+SUB110,CAT084,Access assignment,Access assignment within Security & Compliance,true
+SUB111,CAT085,Settings configuration,Settings configuration within Security & Compliance,true
+SUB112,CAT085,Advanced configuration,Advanced configuration within Security & Compliance,true
+SUB113,CAT086,Upgrade request,Upgrade request within Security & Compliance,true
+SUB114,CAT087,New provisioning,New provisioning within Security & Compliance,true
+SUB115,CAT088,Replacement or return,Replacement or return within Security & Compliance,true
+SUB116,CAT089,License or approval,License or approval within Security & Compliance,true
+SUB117,CAT090,Change to existing service,Change to existing service within Security & Compliance,true
+SUB118,CAT091,Unable to start or launch,Unable to start or launch within Employee Lifecycle,true
+SUB119,CAT091,Partial or inconsistent operation,Partial or inconsistent operation within Employee Lifecycle,true
+SUB120,CAT092,Intermittent failures,Intermittent failures within Employee Lifecycle,true
+SUB121,CAT093,Installation and setup,Installation and setup within Employee Lifecycle,true
+SUB122,CAT093,Specialised setup,Specialised setup within Employee Lifecycle,true
+SUB123,CAT094,Access assignment,Access assignment within Employee Lifecycle,true
+SUB124,CAT095,Settings configuration,Settings configuration within Employee Lifecycle,true
+SUB125,CAT095,Advanced configuration,Advanced configuration within Employee Lifecycle,true
+SUB126,CAT096,Upgrade request,Upgrade request within Employee Lifecycle,true
+SUB127,CAT097,New provisioning,New provisioning within Employee Lifecycle,true
+SUB128,CAT098,Replacement or return,Replacement or return within Employee Lifecycle,true
+SUB129,CAT099,License or approval,License or approval within Employee Lifecycle,true
+SUB130,CAT100,Change to existing service,Change to existing service within Employee Lifecycle,true
+SUB131,CAT101,Unable to start or launch,Unable to start or launch within Meetings & Audio Visual,true
+SUB132,CAT101,Partial or inconsistent operation,Partial or inconsistent operation within Meetings & Audio Visual,true
+SUB133,CAT102,Intermittent failures,Intermittent failures within Meetings & Audio Visual,true
+SUB134,CAT103,Installation and setup,Installation and setup within Meetings & Audio Visual,true
+SUB135,CAT103,Specialised setup,Specialised setup within Meetings & Audio Visual,true
+SUB136,CAT104,Access assignment,Access assignment within Meetings & Audio Visual,true
+SUB137,CAT105,Settings configuration,Settings configuration within Meetings & Audio Visual,true
+SUB138,CAT105,Advanced configuration,Advanced configuration within Meetings & Audio Visual,true
+SUB139,CAT106,Upgrade request,Upgrade request within Meetings & Audio Visual,true
+SUB140,CAT107,New provisioning,New provisioning within Meetings & Audio Visual,true
+SUB141,CAT108,Replacement or return,Replacement or return within Meetings & Audio Visual,true
+SUB142,CAT109,License or approval,License or approval within Meetings & Audio Visual,true
+SUB143,CAT110,Change to existing service,Change to existing service within Meetings & Audio Visual,true
+SUB144,CAT111,Unable to start or launch,Unable to start or launch within Cloud & Developer Tools,true
+SUB145,CAT111,Partial or inconsistent operation,Partial or inconsistent operation within Cloud & Developer Tools,true
+SUB146,CAT112,Intermittent failures,Intermittent failures within Cloud & Developer Tools,true
+SUB147,CAT113,Installation and setup,Installation and setup within Cloud & Developer Tools,true
+SUB148,CAT113,Specialised setup,Specialised setup within Cloud & Developer Tools,true
+SUB149,CAT114,Access assignment,Access assignment within Cloud & Developer Tools,true
+SUB150,CAT115,Settings configuration,Settings configuration within Cloud & Developer Tools,true
+SUB151,CAT115,Advanced configuration,Advanced configuration within Cloud & Developer Tools,true
+SUB152,CAT116,Upgrade request,Upgrade request within Cloud & Developer Tools,true
+SUB153,CAT117,New provisioning,New provisioning within Cloud & Developer Tools,true
+SUB154,CAT118,Replacement or return,Replacement or return within Cloud & Developer Tools,true
+SUB155,CAT119,License or approval,License or approval within Cloud & Developer Tools,true
+SUB156,CAT120,Change to existing service,Change to existing service within Cloud & Developer Tools,true
+SUB157,CAT121,Unable to start or launch,Unable to start or launch within Business Systems,true
+SUB158,CAT121,Partial or inconsistent operation,Partial or inconsistent operation within Business Systems,true
+SUB159,CAT122,Intermittent failures,Intermittent failures within Business Systems,true
+SUB160,CAT123,Installation and setup,Installation and setup within Business Systems,true
+SUB161,CAT123,Specialised setup,Specialised setup within Business Systems,true
+SUB162,CAT124,Access assignment,Access assignment within Business Systems,true
+SUB163,CAT125,Settings configuration,Settings configuration within Business Systems,true
+SUB164,CAT125,Advanced configuration,Advanced configuration within Business Systems,true
+SUB165,CAT126,Upgrade request,Upgrade request within Business Systems,true
+SUB166,CAT127,New provisioning,New provisioning within Business Systems,true
+SUB167,CAT128,Replacement or return,Replacement or return within Business Systems,true
+SUB168,CAT129,License or approval,License or approval within Business Systems,true
+SUB169,CAT130,Change to existing service,Change to existing service within Business Systems,true
+SUB170,CAT131,Unable to start or launch,Unable to start or launch within Workplace Technology,true
+SUB171,CAT131,Partial or inconsistent operation,Partial or inconsistent operation within Workplace Technology,true
+SUB172,CAT132,Intermittent failures,Intermittent failures within Workplace Technology,true
+SUB173,CAT133,Installation and setup,Installation and setup within Workplace Technology,true
+SUB174,CAT133,Specialised setup,Specialised setup within Workplace Technology,true
+SUB175,CAT134,Access assignment,Access assignment within Workplace Technology,true
+SUB176,CAT135,Settings configuration,Settings configuration within Workplace Technology,true
+SUB177,CAT135,Advanced configuration,Advanced configuration within Workplace Technology,true
+SUB178,CAT136,Upgrade request,Upgrade request within Workplace Technology,true
+SUB179,CAT137,New provisioning,New provisioning within Workplace Technology,true
+SUB180,CAT138,Replacement or return,Replacement or return within Workplace Technology,true
+SUB181,CAT139,License or approval,License or approval within Workplace Technology,true
+SUB182,CAT140,Change to existing service,Change to existing service within Workplace Technology,true
+SUB183,CAT141,Unable to start or launch,Unable to start or launch within Peripherals & Accessories,true
+SUB184,CAT141,Partial or inconsistent operation,Partial or inconsistent operation within Peripherals & Accessories,true
+SUB185,CAT142,Intermittent failures,Intermittent failures within Peripherals & Accessories,true
+SUB186,CAT143,Installation and setup,Installation and setup within Peripherals & Accessories,true
+SUB187,CAT143,Specialised setup,Specialised setup within Peripherals & Accessories,true
+SUB188,CAT144,Access assignment,Access assignment within Peripherals & Accessories,true
+SUB189,CAT145,Settings configuration,Settings configuration within Peripherals & Accessories,true
+SUB190,CAT145,Advanced configuration,Advanced configuration within Peripherals & Accessories,true
+SUB191,CAT146,Upgrade request,Upgrade request within Peripherals & Accessories,true
+SUB192,CAT147,New provisioning,New provisioning within Peripherals & Accessories,true
+SUB193,CAT148,Replacement or return,Replacement or return within Peripherals & Accessories,true
+SUB194,CAT149,License or approval,License or approval within Peripherals & Accessories,true
+SUB195,CAT150,Change to existing service,Change to existing service within Peripherals & Accessories,true
+SUB196,CAT151,Unable to start or launch,Unable to start or launch within IT Procurement,true
+SUB197,CAT151,Partial or inconsistent operation,Partial or inconsistent operation within IT Procurement,true
+SUB198,CAT152,Intermittent failures,Intermittent failures within IT Procurement,true
+SUB199,CAT153,Installation and setup,Installation and setup within IT Procurement,true
+SUB200,CAT153,Specialised setup,Specialised setup within IT Procurement,true
+SUB201,CAT154,Access assignment,Access assignment within IT Procurement,true
+SUB202,CAT155,Settings configuration,Settings configuration within IT Procurement,true
+SUB203,CAT155,Advanced configuration,Advanced configuration within IT Procurement,true
+SUB204,CAT156,Upgrade request,Upgrade request within IT Procurement,true
+SUB205,CAT157,New provisioning,New provisioning within IT Procurement,true
+SUB206,CAT158,Replacement or return,Replacement or return within IT Procurement,true
+SUB207,CAT159,License or approval,License or approval within IT Procurement,true
+SUB208,CAT160,Change to existing service,Change to existing service within IT Procurement,true
+SUB209,CAT161,Unable to start or launch,Unable to start or launch within Licensing & Subscriptions,true
+SUB210,CAT161,Partial or inconsistent operation,Partial or inconsistent operation within Licensing & Subscriptions,true
+SUB211,CAT162,Intermittent failures,Intermittent failures within Licensing & Subscriptions,true
+SUB212,CAT163,Installation and setup,Installation and setup within Licensing & Subscriptions,true
+SUB213,CAT163,Specialised setup,Specialised setup within Licensing & Subscriptions,true
+SUB214,CAT164,Access assignment,Access assignment within Licensing & Subscriptions,true
+SUB215,CAT165,Settings configuration,Settings configuration within Licensing & Subscriptions,true
+SUB216,CAT165,Advanced configuration,Advanced configuration within Licensing & Subscriptions,true
+SUB217,CAT166,Upgrade request,Upgrade request within Licensing & Subscriptions,true
+SUB218,CAT167,New provisioning,New provisioning within Licensing & Subscriptions,true
+SUB219,CAT168,Replacement or return,Replacement or return within Licensing & Subscriptions,true
+SUB220,CAT169,License or approval,License or approval within Licensing & Subscriptions,true
+SUB221,CAT170,Change to existing service,Change to existing service within Licensing & Subscriptions,true
+SUB222,CAT171,Unable to start or launch,Unable to start or launch within Data & Analytics,true
+SUB223,CAT171,Partial or inconsistent operation,Partial or inconsistent operation within Data & Analytics,true
+SUB224,CAT172,Intermittent failures,Intermittent failures within Data & Analytics,true
+SUB225,CAT173,Installation and setup,Installation and setup within Data & Analytics,true
+SUB226,CAT173,Specialised setup,Specialised setup within Data & Analytics,true
+SUB227,CAT174,Access assignment,Access assignment within Data & Analytics,true
+SUB228,CAT175,Settings configuration,Settings configuration within Data & Analytics,true
+SUB229,CAT175,Advanced configuration,Advanced configuration within Data & Analytics,true
+SUB230,CAT176,Upgrade request,Upgrade request within Data & Analytics,true
+SUB231,CAT177,New provisioning,New provisioning within Data & Analytics,true
+SUB232,CAT178,Replacement or return,Replacement or return within Data & Analytics,true
+SUB233,CAT179,License or approval,License or approval within Data & Analytics,true
+SUB234,CAT180,Change to existing service,Change to existing service within Data & Analytics,true
+SUB235,CAT181,Unable to start or launch,Unable to start or launch within Service Desk Operations,true
+SUB236,CAT181,Partial or inconsistent operation,Partial or inconsistent operation within Service Desk Operations,true
+SUB237,CAT182,Intermittent failures,Intermittent failures within Service Desk Operations,true
+SUB238,CAT183,Installation and setup,Installation and setup within Service Desk Operations,true
+SUB239,CAT183,Specialised setup,Specialised setup within Service Desk Operations,true
+SUB240,CAT184,Access assignment,Access assignment within Service Desk Operations,true
+SUB241,CAT185,Settings configuration,Settings configuration within Service Desk Operations,true
+SUB242,CAT185,Advanced configuration,Advanced configuration within Service Desk Operations,true
+SUB243,CAT186,Upgrade request,Upgrade request within Service Desk Operations,true
+SUB244,CAT187,New provisioning,New provisioning within Service Desk Operations,true
+SUB245,CAT188,Replacement or return,Replacement or return within Service Desk Operations,true
+SUB246,CAT189,License or approval,License or approval within Service Desk Operations,true
+SUB247,CAT190,Change to existing service,Change to existing service within Service Desk Operations,true
+SUB248,CAT191,Unable to start or launch,Unable to start or launch within Remote Work Services,true
+SUB249,CAT191,Partial or inconsistent operation,Partial or inconsistent operation within Remote Work Services,true
+SUB250,CAT192,Intermittent failures,Intermittent failures within Remote Work Services,true
+SUB251,CAT193,Installation and setup,Installation and setup within Remote Work Services,true
+SUB252,CAT193,Specialised setup,Specialised setup within Remote Work Services,true
+SUB253,CAT194,Access assignment,Access assignment within Remote Work Services,true
+SUB254,CAT195,Settings configuration,Settings configuration within Remote Work Services,true
+SUB255,CAT195,Advanced configuration,Advanced configuration within Remote Work Services,true
+SUB256,CAT196,Upgrade request,Upgrade request within Remote Work Services,true
+SUB257,CAT197,New provisioning,New provisioning within Remote Work Services,true
+SUB258,CAT198,Replacement or return,Replacement or return within Remote Work Services,true
+SUB259,CAT199,License or approval,License or approval within Remote Work Services,true
+SUB260,CAT200,Change to existing service,Change to existing service within Remote Work Services,true

@@ -1,0 +1,7 @@
+﻿module_id,display_name,role,description,requires_live_connection
+KNOWLEDGE,Knowledge Management,workflow,Retrieve local documents and display evidence supported answers,no
+TICKETING,Ticket Management,workflow,Select validated ticket classification and simulate ticket creation,no
+ASSETS,Asset Management,supporting_context,Disambiguate user owned assets only when relevant,no
+VOICE,Voice,input_channel,Browser microphone converts voice to text,no
+LIVE_CHAT,Live Chat,escalation,Prepare context and simulate an agent handoff,no
+CLOCKED,Clocked API,external_decision_api,Real Clocked decisions and validation when API key is configured,yes

@@ -1,0 +1,201 @@
+﻿asset_id,user_id,manufacturer,device_type,model,device_label,location,hostname,serial_number,status,assigned_to,ownership
+AST001,DEMO001,Dell,Laptop,Latitude 5440,Primary work laptop,Office,DEMO-LAPT-001,SYNTH-ASSET-000001,Active,DEMO001,Company Owned
+AST002,DEMO001,Dell,Desktop,OptiPlex 7010,Office PC,Office,DEMO-DESK-002,SYNTH-ASSET-000002,Active,DEMO001,Company Owned
+AST003,DEMO001,Dell,Laptop,Latitude 7440,Travel work laptop,Home,DEMO-LAPT-003,SYNTH-ASSET-000003,Active,DEMO001,Company Owned
+AST004,DEMO002,Lenovo,Laptop,ThinkPad T14,Work laptop,Office,DEMO-LAPT-004,SYNTH-ASSET-000004,Active,DEMO002,Company Owned
+AST005,DEMO002,Dell,Laptop,Latitude 5440,Backup laptop,Home,DEMO-LAPT-005,SYNTH-ASSET-000005,Active,DEMO002,Company Owned
+AST006,DEMO002,Dell,Desktop,OptiPlex 7010,Office desktop,Office,DEMO-DESK-006,SYNTH-ASSET-000006,Active,DEMO002,Company Owned
+AST007,DEMO004,HP,Monitor,E24 G5,Main monitor,Office,DEMO-MONI-007,SYNTH-ASSET-000007,Active,DEMO004,Company Owned
+AST008,DEMO004,Dell,Laptop,Latitude 5440,Work laptop,Office,DEMO-LAPT-008,SYNTH-ASSET-000008,Active,DEMO004,Company Owned
+AST009,DEMO147,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-009,SYNTH-ASSET-000009,Active,DEMO147,Company Owned
+AST010,DEMO184,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-010,SYNTH-ASSET-000010,Active,DEMO184,Company Owned
+AST011,DEMO022,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-011,SYNTH-ASSET-000011,Active,DEMO022,Company Owned
+AST012,DEMO059,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-012,SYNTH-ASSET-000012,Active,DEMO059,Company Owned
+AST013,DEMO096,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-013,SYNTH-ASSET-000013,Active,DEMO096,Company Owned
+AST014,DEMO133,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-014,SYNTH-ASSET-000014,Active,DEMO133,Company Owned
+AST015,DEMO170,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-015,SYNTH-ASSET-000015,Active,DEMO170,Company Owned
+AST016,DEMO008,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-016,SYNTH-ASSET-000016,Active,DEMO008,Company Owned
+AST017,DEMO045,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-017,SYNTH-ASSET-000017,In Repair,DEMO045,Company Owned
+AST018,DEMO082,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-018,SYNTH-ASSET-000018,Active,DEMO082,Company Owned
+AST019,DEMO119,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-019,SYNTH-ASSET-000019,Active,DEMO119,Company Owned
+AST020,DEMO156,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-020,SYNTH-ASSET-000020,Active,DEMO156,Company Owned
+AST021,DEMO193,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-021,SYNTH-ASSET-000021,Active,DEMO193,Company Owned
+AST022,DEMO031,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-022,SYNTH-ASSET-000022,Active,DEMO031,Company Owned
+AST023,DEMO068,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-023,SYNTH-ASSET-000023,Active,DEMO068,Company Owned
+AST024,DEMO105,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-024,SYNTH-ASSET-000024,Active,DEMO105,Company Owned
+AST025,DEMO142,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-025,SYNTH-ASSET-000025,Active,DEMO142,Company Owned
+AST026,DEMO179,Samsung,Monitor,ViewFinity S6,Remote device,Remote,DEMO-MONI-026,SYNTH-ASSET-000026,Active,DEMO179,Company Owned
+AST027,DEMO017,Lenovo,Monitor,ThinkVision T24i,Work device,Shared Desk,DEMO-MONI-027,SYNTH-ASSET-000027,Active,DEMO017,Company Owned
+AST028,DEMO054,Samsung,Tablet,Galaxy Tab S9,Office device,Home,DEMO-TABL-028,SYNTH-ASSET-000028,Active,DEMO054,Company Owned
+AST029,DEMO091,Lenovo,Desktop,ThinkCentre M70q,Backup device,Meeting Room,DEMO-DESK-029,SYNTH-ASSET-000029,Active,DEMO091,Company Owned
+AST030,DEMO128,Samsung,Phone,Galaxy S23,Primary device,Office,DEMO-PHON-030,SYNTH-ASSET-000030,Active,DEMO128,Company Owned
+AST031,DEMO165,Lenovo,Laptop,ThinkPad X1 Carbon,Remote device,Remote,DEMO-LAPT-031,SYNTH-ASSET-000031,Active,DEMO165,Company Owned
+AST032,DEMO003,Microsoft,Tablet,Surface Pro 9,Work device,Shared Desk,DEMO-TABL-032,SYNTH-ASSET-000032,Active,DEMO003,Company Owned
+AST033,DEMO040,Lenovo,Laptop,ThinkPad T14,Office device,Home,DEMO-LAPT-033,SYNTH-ASSET-000033,Active,DEMO040,Company Owned
+AST034,DEMO077,Microsoft,Laptop,Surface Laptop 5,Backup device,Meeting Room,DEMO-LAPT-034,SYNTH-ASSET-000034,In Repair,DEMO077,Company Owned
+AST035,DEMO114,Dell,Docking Station,WD19S,Primary device,Office,DEMO-DOCK-035,SYNTH-ASSET-000035,Active,DEMO114,Company Owned
+AST036,DEMO151,Acer,Monitor,V247Y,Remote device,Remote,DEMO-MONI-036,SYNTH-ASSET-000036,Active,DEMO151,Company Owned
+AST037,DEMO188,Dell,Monitor,U2723QE,Work device,Shared Desk,DEMO-MONI-037,SYNTH-ASSET-000037,Active,DEMO188,Company Owned
+AST038,DEMO026,Acer,Laptop,TravelMate P4,Office device,Home,DEMO-LAPT-038,SYNTH-ASSET-000038,Active,DEMO026,Company Owned
+AST039,DEMO063,Dell,Monitor,P2422H,Backup device,Meeting Room,DEMO-MONI-039,SYNTH-ASSET-000039,Active,DEMO063,Company Owned
+AST040,DEMO100,Apple,Tablet,iPad Air,Primary device,Office,DEMO-TABL-040,SYNTH-ASSET-000040,Active,DEMO100,Company Owned
+AST041,DEMO137,Dell,Desktop,Precision 3660,Remote device,Remote,DEMO-DESK-041,SYNTH-ASSET-000041,Active,DEMO137,Company Owned
+AST042,DEMO174,Apple,Desktop,Mac mini M2,Work device,Shared Desk,DEMO-DESK-042,SYNTH-ASSET-000042,Active,DEMO174,Company Owned
+AST043,DEMO012,Dell,Desktop,OptiPlex 7010,Office device,Home,DEMO-DESK-043,SYNTH-ASSET-000043,Active,DEMO012,Company Owned
+AST044,DEMO049,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-044,SYNTH-ASSET-000044,Active,DEMO049,Company Owned
+AST045,DEMO086,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-045,SYNTH-ASSET-000045,Active,DEMO086,Company Owned
+AST046,DEMO123,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-046,SYNTH-ASSET-000046,Active,DEMO123,Company Owned
+AST047,DEMO160,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-047,SYNTH-ASSET-000047,Active,DEMO160,Company Owned
+AST048,DEMO197,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-048,SYNTH-ASSET-000048,Active,DEMO197,Company Owned
+AST049,DEMO035,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-049,SYNTH-ASSET-000049,Active,DEMO035,Company Owned
+AST050,DEMO072,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-050,SYNTH-ASSET-000050,Active,DEMO072,Company Owned
+AST051,DEMO109,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-051,SYNTH-ASSET-000051,In Repair,DEMO109,Company Owned
+AST052,DEMO146,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-052,SYNTH-ASSET-000052,Active,DEMO146,Company Owned
+AST053,DEMO183,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-053,SYNTH-ASSET-000053,Active,DEMO183,Company Owned
+AST054,DEMO021,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-054,SYNTH-ASSET-000054,Active,DEMO021,Company Owned
+AST055,DEMO058,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-055,SYNTH-ASSET-000055,Active,DEMO058,Company Owned
+AST056,DEMO095,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-056,SYNTH-ASSET-000056,Active,DEMO095,Company Owned
+AST057,DEMO132,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-057,SYNTH-ASSET-000057,Active,DEMO132,Company Owned
+AST058,DEMO169,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-058,SYNTH-ASSET-000058,Active,DEMO169,Company Owned
+AST059,DEMO007,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-059,SYNTH-ASSET-000059,Active,DEMO007,Company Owned
+AST060,DEMO044,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-060,SYNTH-ASSET-000060,Active,DEMO044,Company Owned
+AST061,DEMO081,Samsung,Monitor,ViewFinity S6,Remote device,Remote,DEMO-MONI-061,SYNTH-ASSET-000061,Active,DEMO081,Company Owned
+AST062,DEMO118,Lenovo,Monitor,ThinkVision T24i,Work device,Shared Desk,DEMO-MONI-062,SYNTH-ASSET-000062,Active,DEMO118,Company Owned
+AST063,DEMO155,Samsung,Tablet,Galaxy Tab S9,Office device,Home,DEMO-TABL-063,SYNTH-ASSET-000063,Active,DEMO155,Company Owned
+AST064,DEMO192,Lenovo,Desktop,ThinkCentre M70q,Backup device,Meeting Room,DEMO-DESK-064,SYNTH-ASSET-000064,Active,DEMO192,Company Owned
+AST065,DEMO030,Samsung,Phone,Galaxy S23,Primary device,Office,DEMO-PHON-065,SYNTH-ASSET-000065,Active,DEMO030,Company Owned
+AST066,DEMO067,Lenovo,Laptop,ThinkPad X1 Carbon,Remote device,Remote,DEMO-LAPT-066,SYNTH-ASSET-000066,Active,DEMO067,Company Owned
+AST067,DEMO104,Microsoft,Tablet,Surface Pro 9,Work device,Shared Desk,DEMO-TABL-067,SYNTH-ASSET-000067,Active,DEMO104,Company Owned
+AST068,DEMO141,Lenovo,Laptop,ThinkPad T14,Office device,Home,DEMO-LAPT-068,SYNTH-ASSET-000068,In Repair,DEMO141,Company Owned
+AST069,DEMO178,Microsoft,Laptop,Surface Laptop 5,Backup device,Meeting Room,DEMO-LAPT-069,SYNTH-ASSET-000069,Active,DEMO178,Company Owned
+AST070,DEMO016,Dell,Docking Station,WD19S,Primary device,Office,DEMO-DOCK-070,SYNTH-ASSET-000070,Active,DEMO016,Company Owned
+AST071,DEMO053,Acer,Monitor,V247Y,Remote device,Remote,DEMO-MONI-071,SYNTH-ASSET-000071,Active,DEMO053,Company Owned
+AST072,DEMO090,Dell,Monitor,U2723QE,Work device,Shared Desk,DEMO-MONI-072,SYNTH-ASSET-000072,Active,DEMO090,Company Owned
+AST073,DEMO127,Acer,Laptop,TravelMate P4,Office device,Home,DEMO-LAPT-073,SYNTH-ASSET-000073,Active,DEMO127,Company Owned
+AST074,DEMO164,Dell,Monitor,P2422H,Backup device,Meeting Room,DEMO-MONI-074,SYNTH-ASSET-000074,Active,DEMO164,Company Owned
+AST075,DEMO002,Apple,Tablet,iPad Air,Primary device,Office,DEMO-TABL-075,SYNTH-ASSET-000075,Active,DEMO002,Company Owned
+AST076,DEMO039,Dell,Desktop,Precision 3660,Remote device,Remote,DEMO-DESK-076,SYNTH-ASSET-000076,Active,DEMO039,Company Owned
+AST077,DEMO076,Apple,Desktop,Mac mini M2,Work device,Shared Desk,DEMO-DESK-077,SYNTH-ASSET-000077,Active,DEMO076,Company Owned
+AST078,DEMO113,Dell,Desktop,OptiPlex 7010,Office device,Home,DEMO-DESK-078,SYNTH-ASSET-000078,Active,DEMO113,Company Owned
+AST079,DEMO150,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-079,SYNTH-ASSET-000079,Active,DEMO150,Company Owned
+AST080,DEMO187,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-080,SYNTH-ASSET-000080,Active,DEMO187,Company Owned
+AST081,DEMO025,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-081,SYNTH-ASSET-000081,Active,DEMO025,Company Owned
+AST082,DEMO062,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-082,SYNTH-ASSET-000082,Active,DEMO062,Company Owned
+AST083,DEMO099,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-083,SYNTH-ASSET-000083,Active,DEMO099,Company Owned
+AST084,DEMO136,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-084,SYNTH-ASSET-000084,Active,DEMO136,Company Owned
+AST085,DEMO173,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-085,SYNTH-ASSET-000085,In Repair,DEMO173,Company Owned
+AST086,DEMO011,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-086,SYNTH-ASSET-000086,Active,DEMO011,Company Owned
+AST087,DEMO048,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-087,SYNTH-ASSET-000087,Active,DEMO048,Company Owned
+AST088,DEMO085,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-088,SYNTH-ASSET-000088,Active,DEMO085,Company Owned
+AST089,DEMO122,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-089,SYNTH-ASSET-000089,Active,DEMO122,Company Owned
+AST090,DEMO159,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-090,SYNTH-ASSET-000090,Active,DEMO159,Company Owned
+AST091,DEMO196,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-091,SYNTH-ASSET-000091,Active,DEMO196,Company Owned
+AST092,DEMO034,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-092,SYNTH-ASSET-000092,Active,DEMO034,Company Owned
+AST093,DEMO071,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-093,SYNTH-ASSET-000093,Active,DEMO071,Company Owned
+AST094,DEMO108,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-094,SYNTH-ASSET-000094,Active,DEMO108,Company Owned
+AST095,DEMO145,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-095,SYNTH-ASSET-000095,Active,DEMO145,Company Owned
+AST096,DEMO182,Samsung,Monitor,ViewFinity S6,Remote device,Remote,DEMO-MONI-096,SYNTH-ASSET-000096,Active,DEMO182,Company Owned
+AST097,DEMO020,Lenovo,Monitor,ThinkVision T24i,Work device,Shared Desk,DEMO-MONI-097,SYNTH-ASSET-000097,Active,DEMO020,Company Owned
+AST098,DEMO057,Samsung,Tablet,Galaxy Tab S9,Office device,Home,DEMO-TABL-098,SYNTH-ASSET-000098,Active,DEMO057,Company Owned
+AST099,DEMO094,Lenovo,Desktop,ThinkCentre M70q,Backup device,Meeting Room,DEMO-DESK-099,SYNTH-ASSET-000099,Active,DEMO094,Company Owned
+AST100,DEMO131,Samsung,Phone,Galaxy S23,Primary device,Office,DEMO-PHON-100,SYNTH-ASSET-000100,Active,DEMO131,Company Owned
+AST101,DEMO168,Lenovo,Laptop,ThinkPad X1 Carbon,Remote device,Remote,DEMO-LAPT-101,SYNTH-ASSET-000101,Active,DEMO168,Company Owned
+AST102,DEMO006,Microsoft,Tablet,Surface Pro 9,Work device,Shared Desk,DEMO-TABL-102,SYNTH-ASSET-000102,In Repair,DEMO006,Company Owned
+AST103,DEMO043,Lenovo,Laptop,ThinkPad T14,Office device,Home,DEMO-LAPT-103,SYNTH-ASSET-000103,Active,DEMO043,Company Owned
+AST104,DEMO080,Microsoft,Laptop,Surface Laptop 5,Backup device,Meeting Room,DEMO-LAPT-104,SYNTH-ASSET-000104,Active,DEMO080,Company Owned
+AST105,DEMO117,Dell,Docking Station,WD19S,Primary device,Office,DEMO-DOCK-105,SYNTH-ASSET-000105,Active,DEMO117,Company Owned
+AST106,DEMO154,Acer,Monitor,V247Y,Remote device,Remote,DEMO-MONI-106,SYNTH-ASSET-000106,Active,DEMO154,Company Owned
+AST107,DEMO191,Dell,Monitor,U2723QE,Work device,Shared Desk,DEMO-MONI-107,SYNTH-ASSET-000107,Active,DEMO191,Company Owned
+AST108,DEMO029,Acer,Laptop,TravelMate P4,Office device,Home,DEMO-LAPT-108,SYNTH-ASSET-000108,Active,DEMO029,Company Owned
+AST109,DEMO066,Dell,Monitor,P2422H,Backup device,Meeting Room,DEMO-MONI-109,SYNTH-ASSET-000109,Active,DEMO066,Company Owned
+AST110,DEMO103,Apple,Tablet,iPad Air,Primary device,Office,DEMO-TABL-110,SYNTH-ASSET-000110,Active,DEMO103,Company Owned
+AST111,DEMO140,Dell,Desktop,Precision 3660,Remote device,Remote,DEMO-DESK-111,SYNTH-ASSET-000111,Active,DEMO140,Company Owned
+AST112,DEMO177,Apple,Desktop,Mac mini M2,Work device,Shared Desk,DEMO-DESK-112,SYNTH-ASSET-000112,Active,DEMO177,Company Owned
+AST113,DEMO015,Dell,Desktop,OptiPlex 7010,Office device,Home,DEMO-DESK-113,SYNTH-ASSET-000113,Active,DEMO015,Company Owned
+AST114,DEMO052,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-114,SYNTH-ASSET-000114,Active,DEMO052,Company Owned
+AST115,DEMO089,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-115,SYNTH-ASSET-000115,Active,DEMO089,Company Owned
+AST116,DEMO126,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-116,SYNTH-ASSET-000116,Active,DEMO126,Company Owned
+AST117,DEMO163,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-117,SYNTH-ASSET-000117,Active,DEMO163,Company Owned
+AST118,DEMO200,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-118,SYNTH-ASSET-000118,Active,DEMO200,Company Owned
+AST119,DEMO038,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-119,SYNTH-ASSET-000119,In Repair,DEMO038,Company Owned
+AST120,DEMO075,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-120,SYNTH-ASSET-000120,Active,DEMO075,Company Owned
+AST121,DEMO112,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-121,SYNTH-ASSET-000121,Active,DEMO112,Company Owned
+AST122,DEMO149,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-122,SYNTH-ASSET-000122,Active,DEMO149,Company Owned
+AST123,DEMO186,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-123,SYNTH-ASSET-000123,Active,DEMO186,Company Owned
+AST124,DEMO024,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-124,SYNTH-ASSET-000124,Active,DEMO024,Company Owned
+AST125,DEMO061,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-125,SYNTH-ASSET-000125,Active,DEMO061,Company Owned
+AST126,DEMO098,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-126,SYNTH-ASSET-000126,Active,DEMO098,Company Owned
+AST127,DEMO135,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-127,SYNTH-ASSET-000127,Active,DEMO135,Company Owned
+AST128,DEMO172,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-128,SYNTH-ASSET-000128,Active,DEMO172,Company Owned
+AST129,DEMO010,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-129,SYNTH-ASSET-000129,Active,DEMO010,Company Owned
+AST130,DEMO047,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-130,SYNTH-ASSET-000130,Active,DEMO047,Company Owned
+AST131,DEMO084,Samsung,Monitor,ViewFinity S6,Remote device,Remote,DEMO-MONI-131,SYNTH-ASSET-000131,Active,DEMO084,Company Owned
+AST132,DEMO121,Lenovo,Monitor,ThinkVision T24i,Work device,Shared Desk,DEMO-MONI-132,SYNTH-ASSET-000132,Active,DEMO121,Company Owned
+AST133,DEMO158,Samsung,Tablet,Galaxy Tab S9,Office device,Home,DEMO-TABL-133,SYNTH-ASSET-000133,Active,DEMO158,Company Owned
+AST134,DEMO195,Lenovo,Desktop,ThinkCentre M70q,Backup device,Meeting Room,DEMO-DESK-134,SYNTH-ASSET-000134,Active,DEMO195,Company Owned
+AST135,DEMO033,Samsung,Phone,Galaxy S23,Primary device,Office,DEMO-PHON-135,SYNTH-ASSET-000135,Active,DEMO033,Company Owned
+AST136,DEMO070,Lenovo,Laptop,ThinkPad X1 Carbon,Remote device,Remote,DEMO-LAPT-136,SYNTH-ASSET-000136,In Repair,DEMO070,Company Owned
+AST137,DEMO107,Microsoft,Tablet,Surface Pro 9,Work device,Shared Desk,DEMO-TABL-137,SYNTH-ASSET-000137,Active,DEMO107,Company Owned
+AST138,DEMO144,Lenovo,Laptop,ThinkPad T14,Office device,Home,DEMO-LAPT-138,SYNTH-ASSET-000138,Active,DEMO144,Company Owned
+AST139,DEMO181,Microsoft,Laptop,Surface Laptop 5,Backup device,Meeting Room,DEMO-LAPT-139,SYNTH-ASSET-000139,Active,DEMO181,Company Owned
+AST140,DEMO019,Dell,Docking Station,WD19S,Primary device,Office,DEMO-DOCK-140,SYNTH-ASSET-000140,Active,DEMO019,Company Owned
+AST141,DEMO056,Acer,Monitor,V247Y,Remote device,Remote,DEMO-MONI-141,SYNTH-ASSET-000141,Active,DEMO056,Company Owned
+AST142,DEMO093,Dell,Monitor,U2723QE,Work device,Shared Desk,DEMO-MONI-142,SYNTH-ASSET-000142,Active,DEMO093,Company Owned
+AST143,DEMO130,Acer,Laptop,TravelMate P4,Office device,Home,DEMO-LAPT-143,SYNTH-ASSET-000143,Active,DEMO130,Company Owned
+AST144,DEMO167,Dell,Monitor,P2422H,Backup device,Meeting Room,DEMO-MONI-144,SYNTH-ASSET-000144,Active,DEMO167,Company Owned
+AST145,DEMO005,Apple,Tablet,iPad Air,Primary device,Office,DEMO-TABL-145,SYNTH-ASSET-000145,Active,DEMO005,Company Owned
+AST146,DEMO042,Dell,Desktop,Precision 3660,Remote device,Remote,DEMO-DESK-146,SYNTH-ASSET-000146,Active,DEMO042,Company Owned
+AST147,DEMO079,Apple,Desktop,Mac mini M2,Work device,Shared Desk,DEMO-DESK-147,SYNTH-ASSET-000147,Active,DEMO079,Company Owned
+AST148,DEMO116,Dell,Desktop,OptiPlex 7010,Office device,Home,DEMO-DESK-148,SYNTH-ASSET-000148,Active,DEMO116,Company Owned
+AST149,DEMO153,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-149,SYNTH-ASSET-000149,Active,DEMO153,Company Owned
+AST150,DEMO190,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-150,SYNTH-ASSET-000150,Active,DEMO190,Company Owned
+AST151,DEMO028,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-151,SYNTH-ASSET-000151,Active,DEMO028,Company Owned
+AST152,DEMO065,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-152,SYNTH-ASSET-000152,Active,DEMO065,Company Owned
+AST153,DEMO102,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-153,SYNTH-ASSET-000153,In Repair,DEMO102,Company Owned
+AST154,DEMO139,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-154,SYNTH-ASSET-000154,Active,DEMO139,Company Owned
+AST155,DEMO176,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-155,SYNTH-ASSET-000155,Active,DEMO176,Company Owned
+AST156,DEMO014,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-156,SYNTH-ASSET-000156,Active,DEMO014,Company Owned
+AST157,DEMO051,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-157,SYNTH-ASSET-000157,Active,DEMO051,Company Owned
+AST158,DEMO088,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-158,SYNTH-ASSET-000158,Active,DEMO088,Company Owned
+AST159,DEMO125,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-159,SYNTH-ASSET-000159,Active,DEMO125,Company Owned
+AST160,DEMO162,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-160,SYNTH-ASSET-000160,Active,DEMO162,Company Owned
+AST161,DEMO199,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-161,SYNTH-ASSET-000161,Active,DEMO199,Company Owned
+AST162,DEMO037,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-162,SYNTH-ASSET-000162,Active,DEMO037,Company Owned
+AST163,DEMO074,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-163,SYNTH-ASSET-000163,Active,DEMO074,Company Owned
+AST164,DEMO111,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-164,SYNTH-ASSET-000164,Active,DEMO111,Company Owned
+AST165,DEMO148,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-165,SYNTH-ASSET-000165,Active,DEMO148,Company Owned
+AST166,DEMO185,Samsung,Monitor,ViewFinity S6,Remote device,Remote,DEMO-MONI-166,SYNTH-ASSET-000166,Active,DEMO185,Company Owned
+AST167,DEMO023,Lenovo,Monitor,ThinkVision T24i,Work device,Shared Desk,DEMO-MONI-167,SYNTH-ASSET-000167,Active,DEMO023,Company Owned
+AST168,DEMO060,Samsung,Tablet,Galaxy Tab S9,Office device,Home,DEMO-TABL-168,SYNTH-ASSET-000168,Active,DEMO060,Company Owned
+AST169,DEMO097,Lenovo,Desktop,ThinkCentre M70q,Backup device,Meeting Room,DEMO-DESK-169,SYNTH-ASSET-000169,Active,DEMO097,Company Owned
+AST170,DEMO134,Samsung,Phone,Galaxy S23,Primary device,Office,DEMO-PHON-170,SYNTH-ASSET-000170,In Repair,DEMO134,Company Owned
+AST171,DEMO171,Lenovo,Laptop,ThinkPad X1 Carbon,Remote device,Remote,DEMO-LAPT-171,SYNTH-ASSET-000171,Active,DEMO171,Company Owned
+AST172,DEMO009,Microsoft,Tablet,Surface Pro 9,Work device,Shared Desk,DEMO-TABL-172,SYNTH-ASSET-000172,Active,DEMO009,Company Owned
+AST173,DEMO046,Lenovo,Laptop,ThinkPad T14,Office device,Home,DEMO-LAPT-173,SYNTH-ASSET-000173,Active,DEMO046,Company Owned
+AST174,DEMO083,Microsoft,Laptop,Surface Laptop 5,Backup device,Meeting Room,DEMO-LAPT-174,SYNTH-ASSET-000174,Active,DEMO083,Company Owned
+AST175,DEMO120,Dell,Docking Station,WD19S,Primary device,Office,DEMO-DOCK-175,SYNTH-ASSET-000175,Active,DEMO120,Company Owned
+AST176,DEMO157,Acer,Monitor,V247Y,Remote device,Remote,DEMO-MONI-176,SYNTH-ASSET-000176,Active,DEMO157,Company Owned
+AST177,DEMO194,Dell,Monitor,U2723QE,Work device,Shared Desk,DEMO-MONI-177,SYNTH-ASSET-000177,Active,DEMO194,Company Owned
+AST178,DEMO032,Acer,Laptop,TravelMate P4,Office device,Home,DEMO-LAPT-178,SYNTH-ASSET-000178,Active,DEMO032,Company Owned
+AST179,DEMO069,Dell,Monitor,P2422H,Backup device,Meeting Room,DEMO-MONI-179,SYNTH-ASSET-000179,Active,DEMO069,Company Owned
+AST180,DEMO106,Apple,Tablet,iPad Air,Primary device,Office,DEMO-TABL-180,SYNTH-ASSET-000180,Active,DEMO106,Company Owned
+AST181,DEMO143,Dell,Desktop,Precision 3660,Remote device,Remote,DEMO-DESK-181,SYNTH-ASSET-000181,Active,DEMO143,Company Owned
+AST182,DEMO180,Apple,Desktop,Mac mini M2,Work device,Shared Desk,DEMO-DESK-182,SYNTH-ASSET-000182,Active,DEMO180,Company Owned
+AST183,DEMO018,Dell,Desktop,OptiPlex 7010,Office device,Home,DEMO-DESK-183,SYNTH-ASSET-000183,Active,DEMO018,Company Owned
+AST184,DEMO055,Apple,Laptop,MacBook Pro 14,Backup device,Meeting Room,DEMO-LAPT-184,SYNTH-ASSET-000184,Active,DEMO055,Company Owned
+AST185,DEMO092,Dell,Laptop,Precision 3580,Primary device,Office,DEMO-LAPT-185,SYNTH-ASSET-000185,Active,DEMO092,Company Owned
+AST186,DEMO129,Apple,Laptop,MacBook Air M2,Remote device,Remote,DEMO-LAPT-186,SYNTH-ASSET-000186,Active,DEMO129,Company Owned
+AST187,DEMO166,Dell,Laptop,Latitude 7440,Work device,Shared Desk,DEMO-LAPT-187,SYNTH-ASSET-000187,In Repair,DEMO166,Company Owned
+AST188,DEMO004,HP,Printer,LaserJet Pro M404,Office device,Home,DEMO-PRIN-188,SYNTH-ASSET-000188,Active,DEMO004,Company Owned
+AST189,DEMO041,Dell,Laptop,Latitude 5440,Backup device,Meeting Room,DEMO-LAPT-189,SYNTH-ASSET-000189,Active,DEMO041,Company Owned
+AST190,DEMO078,HP,Monitor,Z24f G3,Primary device,Office,DEMO-MONI-190,SYNTH-ASSET-000190,Active,DEMO078,Company Owned
+AST191,DEMO115,Cisco,Webcam,Webex Desk Camera,Remote device,Remote,DEMO-WEBC-191,SYNTH-ASSET-000191,Active,DEMO115,Company Owned
+AST192,DEMO152,HP,Monitor,E24 G5,Work device,Shared Desk,DEMO-MONI-192,SYNTH-ASSET-000192,Active,DEMO152,Company Owned
+AST193,DEMO189,Cisco,Phone,Desk Phone 8851,Office device,Home,DEMO-PHON-193,SYNTH-ASSET-000193,Active,DEMO189,Company Owned
+AST194,DEMO027,HP,Desktop,EliteDesk 800,Backup device,Meeting Room,DEMO-DESK-194,SYNTH-ASSET-000194,Active,DEMO027,Company Owned
+AST195,DEMO064,Zebra,Printer,ZD421 Label Printer,Primary device,Office,DEMO-PRIN-195,SYNTH-ASSET-000195,Active,DEMO064,Company Owned
+AST196,DEMO101,HP,Laptop,ProBook 450 G10,Remote device,Remote,DEMO-LAPT-196,SYNTH-ASSET-000196,Active,DEMO101,Company Owned
+AST197,DEMO138,Logitech,Headset,Zone Wireless,Work device,Shared Desk,DEMO-HEAD-197,SYNTH-ASSET-000197,Active,DEMO138,Company Owned
+AST198,DEMO175,HP,Laptop,EliteBook 840 G10,Office device,Home,DEMO-LAPT-198,SYNTH-ASSET-000198,Active,DEMO175,Company Owned
+AST199,DEMO013,Logitech,Webcam,Brio 500,Backup device,Meeting Room,DEMO-WEBC-199,SYNTH-ASSET-000199,Active,DEMO013,Company Owned
+AST200,DEMO050,Lenovo,Docking Station,ThinkPad USB C Dock,Primary device,Office,DEMO-DOCK-200,SYNTH-ASSET-000200,Active,DEMO050,Company Owned

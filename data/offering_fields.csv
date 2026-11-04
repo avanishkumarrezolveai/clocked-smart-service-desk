@@ -1,0 +1,269 @@
+﻿offering_id,field_id,field_label,required,ask_when,field_type
+INC001,issue_description,Describe the problem,true,if missing,text
+INC001,impact,Who or what is affected?,true,if missing,text
+INC001,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC002,issue_description,Describe the problem,true,if missing,text
+INC002,impact,Who or what is affected?,true,if missing,text
+INC002,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC003,issue_description,Describe the problem,true,if missing,text
+INC003,impact,Who or what is affected?,true,if missing,text
+INC003,software_name,Which application?,true,if not clear from offering,text
+INC004,issue_description,Describe the problem,true,if missing,text
+INC004,impact,Who or what is affected?,true,if missing,text
+INC005,issue_description,Describe the problem,true,if missing,text
+INC005,impact,Who or what is affected?,true,if missing,text
+INC006,issue_description,Describe the problem,true,if missing,text
+INC006,impact,Who or what is affected?,true,if missing,text
+INC007,issue_description,Describe the problem,true,if missing,text
+INC007,impact,Who or what is affected?,true,if missing,text
+INC007,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC008,issue_description,Describe the problem,true,if missing,text
+INC008,impact,Who or what is affected?,true,if missing,text
+INC008,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC009,issue_description,Describe the problem,true,if missing,text
+INC009,impact,Who or what is affected?,true,if missing,text
+INC010,issue_description,Describe the problem,true,if missing,text
+INC010,impact,Who or what is affected?,true,if missing,text
+INC011,issue_description,Describe the problem,true,if missing,text
+INC011,impact,Who or what is affected?,true,if missing,text
+INC011,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC012,issue_description,Describe the problem,true,if missing,text
+INC012,impact,Who or what is affected?,true,if missing,text
+INC013,issue_description,Describe the problem,true,if missing,text
+INC013,impact,Who or what is affected?,true,if missing,text
+INC013,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+INC014,issue_description,Describe the problem,true,if missing,text
+INC014,impact,Who or what is affected?,true,if missing,text
+INC015,issue_description,Describe the problem,true,if missing,text
+INC015,impact,Who or what is affected?,true,if missing,text
+REQ001,request_description,What would you like to request?,true,if missing,text
+REQ002,request_description,What would you like to request?,true,if missing,text
+REQ003,request_description,What would you like to request?,true,if missing,text
+REQ004,request_description,What would you like to request?,true,if missing,text
+REQ004,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ005,request_description,What would you like to request?,true,if missing,text
+REQ005,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ006,request_description,What would you like to request?,true,if missing,text
+REQ006,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ007,request_description,What would you like to request?,true,if missing,text
+REQ007,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ008,request_description,What would you like to request?,true,if missing,text
+REQ009,request_description,What would you like to request?,true,if missing,text
+REQ009,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ010,request_description,What would you like to request?,true,if missing,text
+REQ011,request_description,What would you like to request?,true,if missing,text
+REQ011,software_name,Which application?,true,if not clear from offering,text
+REQ012,request_description,What would you like to request?,true,if missing,text
+REQ012,software_name,Which application?,true,if not clear from offering,text
+REQ013,request_description,What would you like to request?,true,if missing,text
+REQ013,software_name,Which application?,true,if not clear from offering,text
+REQ014,request_description,What would you like to request?,true,if missing,text
+REQ014,software_name,Which application?,true,if not clear from offering,text
+REQ015,request_description,What would you like to request?,true,if missing,text
+REQ015,software_name,Which application?,true,if not clear from offering,text
+REQ016,request_description,What would you like to request?,true,if missing,text
+REQ016,software_name,Which application?,true,if not clear from offering,text
+REQ017,request_description,What would you like to request?,true,if missing,text
+REQ017,software_name,Which application?,true,if not clear from offering,text
+REQ018,request_description,What would you like to request?,true,if missing,text
+REQ018,software_name,Which application?,true,if not clear from offering,text
+REQ019,request_description,What would you like to request?,true,if missing,text
+REQ019,software_name,Which application?,true,if not clear from offering,text
+REQ020,request_description,What would you like to request?,true,if missing,text
+REQ020,software_name,Which application?,true,if not clear from offering,text
+REQ021,request_description,What would you like to request?,true,if missing,text
+REQ021,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ022,request_description,What would you like to request?,true,if missing,text
+REQ022,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ023,request_description,What would you like to request?,true,if missing,text
+REQ023,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ024,request_description,What would you like to request?,true,if missing,text
+REQ024,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ025,request_description,What would you like to request?,true,if missing,text
+REQ025,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ026,request_description,What would you like to request?,true,if missing,text
+REQ026,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ027,request_description,What would you like to request?,true,if missing,text
+REQ027,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ028,request_description,What would you like to request?,true,if missing,text
+REQ028,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ029,request_description,What would you like to request?,true,if missing,text
+REQ029,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ030,request_description,What would you like to request?,true,if missing,text
+REQ030,target_application,Which application needs access?,conditional,if not present in offering or conversation,text
+REQ031,request_description,What would you like to request?,true,if missing,text
+REQ032,request_description,What would you like to request?,true,if missing,text
+REQ033,request_description,What would you like to request?,true,if missing,text
+REQ034,request_description,What would you like to request?,true,if missing,text
+REQ035,request_description,What would you like to request?,true,if missing,text
+REQ036,request_description,What would you like to request?,true,if missing,text
+REQ037,request_description,What would you like to request?,true,if missing,text
+REQ038,request_description,What would you like to request?,true,if missing,text
+REQ039,request_description,What would you like to request?,true,if missing,text
+REQ040,request_description,What would you like to request?,true,if missing,text
+REQ041,request_description,What would you like to request?,true,if missing,text
+REQ042,request_description,What would you like to request?,true,if missing,text
+REQ043,request_description,What would you like to request?,true,if missing,text
+REQ044,request_description,What would you like to request?,true,if missing,text
+REQ045,request_description,What would you like to request?,true,if missing,text
+REQ046,request_description,What would you like to request?,true,if missing,text
+REQ047,request_description,What would you like to request?,true,if missing,text
+REQ048,request_description,What would you like to request?,true,if missing,text
+REQ049,request_description,What would you like to request?,true,if missing,text
+REQ050,request_description,What would you like to request?,true,if missing,text
+REQ051,request_description,What would you like to request?,true,if missing,text
+REQ052,request_description,What would you like to request?,true,if missing,text
+REQ053,request_description,What would you like to request?,true,if missing,text
+REQ054,request_description,What would you like to request?,true,if missing,text
+REQ055,request_description,What would you like to request?,true,if missing,text
+REQ056,request_description,What would you like to request?,true,if missing,text
+REQ057,request_description,What would you like to request?,true,if missing,text
+REQ057,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ058,request_description,What would you like to request?,true,if missing,text
+REQ059,request_description,What would you like to request?,true,if missing,text
+REQ059,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ060,request_description,What would you like to request?,true,if missing,text
+REQ061,request_description,What would you like to request?,true,if missing,text
+REQ062,request_description,What would you like to request?,true,if missing,text
+REQ063,request_description,What would you like to request?,true,if missing,text
+REQ064,request_description,What would you like to request?,true,if missing,text
+REQ065,request_description,What would you like to request?,true,if missing,text
+REQ066,request_description,What would you like to request?,true,if missing,text
+REQ067,request_description,What would you like to request?,true,if missing,text
+REQ068,request_description,What would you like to request?,true,if missing,text
+REQ069,request_description,What would you like to request?,true,if missing,text
+REQ069,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ070,request_description,What would you like to request?,true,if missing,text
+REQ071,request_description,What would you like to request?,true,if missing,text
+REQ072,request_description,What would you like to request?,true,if missing,text
+REQ073,request_description,What would you like to request?,true,if missing,text
+REQ074,request_description,What would you like to request?,true,if missing,text
+REQ075,request_description,What would you like to request?,true,if missing,text
+REQ076,request_description,What would you like to request?,true,if missing,text
+REQ077,request_description,What would you like to request?,true,if missing,text
+REQ078,request_description,What would you like to request?,true,if missing,text
+REQ079,request_description,What would you like to request?,true,if missing,text
+REQ080,request_description,What would you like to request?,true,if missing,text
+REQ081,request_description,What would you like to request?,true,if missing,text
+REQ082,request_description,What would you like to request?,true,if missing,text
+REQ083,request_description,What would you like to request?,true,if missing,text
+REQ084,request_description,What would you like to request?,true,if missing,text
+REQ085,request_description,What would you like to request?,true,if missing,text
+REQ086,request_description,What would you like to request?,true,if missing,text
+REQ087,request_description,What would you like to request?,true,if missing,text
+REQ088,request_description,What would you like to request?,true,if missing,text
+REQ089,request_description,What would you like to request?,true,if missing,text
+REQ090,request_description,What would you like to request?,true,if missing,text
+REQ091,request_description,What would you like to request?,true,if missing,text
+REQ092,request_description,What would you like to request?,true,if missing,text
+REQ093,request_description,What would you like to request?,true,if missing,text
+REQ094,request_description,What would you like to request?,true,if missing,text
+REQ095,request_description,What would you like to request?,true,if missing,text
+REQ096,request_description,What would you like to request?,true,if missing,text
+REQ097,request_description,What would you like to request?,true,if missing,text
+REQ098,request_description,What would you like to request?,true,if missing,text
+REQ099,request_description,What would you like to request?,true,if missing,text
+REQ100,request_description,What would you like to request?,true,if missing,text
+REQ101,request_description,What would you like to request?,true,if missing,text
+REQ102,request_description,What would you like to request?,true,if missing,text
+REQ103,request_description,What would you like to request?,true,if missing,text
+REQ104,request_description,What would you like to request?,true,if missing,text
+REQ105,request_description,What would you like to request?,true,if missing,text
+REQ106,request_description,What would you like to request?,true,if missing,text
+REQ107,request_description,What would you like to request?,true,if missing,text
+REQ108,request_description,What would you like to request?,true,if missing,text
+REQ109,request_description,What would you like to request?,true,if missing,text
+REQ110,request_description,What would you like to request?,true,if missing,text
+REQ110,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ111,request_description,What would you like to request?,true,if missing,text
+REQ112,request_description,What would you like to request?,true,if missing,text
+REQ113,request_description,What would you like to request?,true,if missing,text
+REQ114,request_description,What would you like to request?,true,if missing,text
+REQ115,request_description,What would you like to request?,true,if missing,text
+REQ116,request_description,What would you like to request?,true,if missing,text
+REQ117,request_description,What would you like to request?,true,if missing,text
+REQ118,request_description,What would you like to request?,true,if missing,text
+REQ119,request_description,What would you like to request?,true,if missing,text
+REQ120,request_description,What would you like to request?,true,if missing,text
+REQ121,request_description,What would you like to request?,true,if missing,text
+REQ122,request_description,What would you like to request?,true,if missing,text
+REQ123,request_description,What would you like to request?,true,if missing,text
+REQ124,request_description,What would you like to request?,true,if missing,text
+REQ125,request_description,What would you like to request?,true,if missing,text
+REQ126,request_description,What would you like to request?,true,if missing,text
+REQ127,request_description,What would you like to request?,true,if missing,text
+REQ128,request_description,What would you like to request?,true,if missing,text
+REQ129,request_description,What would you like to request?,true,if missing,text
+REQ130,request_description,What would you like to request?,true,if missing,text
+REQ131,request_description,What would you like to request?,true,if missing,text
+REQ132,request_description,What would you like to request?,true,if missing,text
+REQ133,request_description,What would you like to request?,true,if missing,text
+REQ134,request_description,What would you like to request?,true,if missing,text
+REQ135,request_description,What would you like to request?,true,if missing,text
+REQ136,request_description,What would you like to request?,true,if missing,text
+REQ137,request_description,What would you like to request?,true,if missing,text
+REQ138,request_description,What would you like to request?,true,if missing,text
+REQ139,request_description,What would you like to request?,true,if missing,text
+REQ139,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ140,request_description,What would you like to request?,true,if missing,text
+REQ141,request_description,What would you like to request?,true,if missing,text
+REQ142,request_description,What would you like to request?,true,if missing,text
+REQ143,request_description,What would you like to request?,true,if missing,text
+REQ144,request_description,What would you like to request?,true,if missing,text
+REQ145,request_description,What would you like to request?,true,if missing,text
+REQ146,request_description,What would you like to request?,true,if missing,text
+REQ147,request_description,What would you like to request?,true,if missing,text
+REQ148,request_description,What would you like to request?,true,if missing,text
+REQ149,request_description,What would you like to request?,true,if missing,text
+REQ150,request_description,What would you like to request?,true,if missing,text
+REQ150,asset_id,Which of your devices is affected?,conditional,if user owns matching assets; otherwise allow unknown asset,asset_lookup
+REQ151,request_description,What would you like to request?,true,if missing,text
+REQ152,request_description,What would you like to request?,true,if missing,text
+REQ153,request_description,What would you like to request?,true,if missing,text
+REQ154,request_description,What would you like to request?,true,if missing,text
+REQ155,request_description,What would you like to request?,true,if missing,text
+REQ156,request_description,What would you like to request?,true,if missing,text
+REQ157,request_description,What would you like to request?,true,if missing,text
+REQ158,request_description,What would you like to request?,true,if missing,text
+REQ159,request_description,What would you like to request?,true,if missing,text
+REQ160,request_description,What would you like to request?,true,if missing,text
+REQ161,request_description,What would you like to request?,true,if missing,text
+REQ162,request_description,What would you like to request?,true,if missing,text
+REQ163,request_description,What would you like to request?,true,if missing,text
+REQ164,request_description,What would you like to request?,true,if missing,text
+REQ165,request_description,What would you like to request?,true,if missing,text
+REQ166,request_description,What would you like to request?,true,if missing,text
+REQ167,request_description,What would you like to request?,true,if missing,text
+REQ168,request_description,What would you like to request?,true,if missing,text
+REQ169,request_description,What would you like to request?,true,if missing,text
+REQ170,request_description,What would you like to request?,true,if missing,text
+REQ171,request_description,What would you like to request?,true,if missing,text
+REQ172,request_description,What would you like to request?,true,if missing,text
+REQ173,request_description,What would you like to request?,true,if missing,text
+REQ174,request_description,What would you like to request?,true,if missing,text
+REQ175,request_description,What would you like to request?,true,if missing,text
+REQ176,request_description,What would you like to request?,true,if missing,text
+REQ177,request_description,What would you like to request?,true,if missing,text
+REQ178,request_description,What would you like to request?,true,if missing,text
+REQ179,request_description,What would you like to request?,true,if missing,text
+REQ180,request_description,What would you like to request?,true,if missing,text
+REQ181,request_description,What would you like to request?,true,if missing,text
+REQ182,request_description,What would you like to request?,true,if missing,text
+REQ183,request_description,What would you like to request?,true,if missing,text
+REQ184,request_description,What would you like to request?,true,if missing,text
+REQ185,request_description,What would you like to request?,true,if missing,text
+REQ186,request_description,What would you like to request?,true,if missing,text
+REQ187,request_description,What would you like to request?,true,if missing,text
+REQ188,request_description,What would you like to request?,true,if missing,text
+REQ189,request_description,What would you like to request?,true,if missing,text
+REQ190,request_description,What would you like to request?,true,if missing,text
+REQ191,request_description,What would you like to request?,true,if missing,text
+REQ192,request_description,What would you like to request?,true,if missing,text
+REQ193,request_description,What would you like to request?,true,if missing,text
+REQ194,request_description,What would you like to request?,true,if missing,text
+REQ195,request_description,What would you like to request?,true,if missing,text
+REQ196,request_description,What would you like to request?,true,if missing,text
+REQ197,request_description,What would you like to request?,true,if missing,text
+REQ198,request_description,What would you like to request?,true,if missing,text
+REQ199,request_description,What would you like to request?,true,if missing,text
+REQ200,request_description,What would you like to request?,true,if missing,text

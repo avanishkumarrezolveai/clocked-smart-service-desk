@@ -1,0 +1,16 @@
+﻿offering_id,ticket_type_id,offering_name,description,synonyms,asset_policy,active,domain
+INC001,INC,Laptop Will Not Power On,Laptop fails to boot or shows no power,laptop not turning on|laptop dead,required_if_owned,true,Endpoint Hardware
+INC002,INC,Desktop Will Not Start,Desktop fails to start correctly,desktop not booting|pc will not start,required_if_owned,true,Endpoint Hardware
+INC003,INC,Application Crash,Previously working application crashes,outlook crashing|app closes unexpectedly,optional,true,Software & Applications
+INC004,INC,VPN Connection Failure,VPN connection is unavailable or fails,vpn not connecting|remote connection broken,optional,true,Network & Connectivity
+INC005,INC,Account Locked,Existing work account is locked or inaccessible,account locked out|cannot log in,optional,true,Identity & Access
+INC006,INC,Email Not Synchronising,Email cannot send or receive due to an issue,email not syncing|mailbox not updating,optional,true,Email & Collaboration
+INC007,INC,Printer Jam Or Error,Existing printer is failing to print,printer jam|printer error,required_if_owned,true,Printing & Scanning
+INC008,INC,Corporate Phone Not Working,Assigned corporate phone fails to operate,phone not working|mobile device issue,required_if_owned,true,Mobile & Telephony
+INC009,INC,Shared Drive Unavailable,Existing shared drive cannot be accessed,shared drive not accessible|file share down,optional,true,Storage & File Services
+INC010,INC,Suspected Security Incident,Report suspicious access or security threat,phishing|account compromised,optional,true,Security & Compliance
+INC011,INC,Meeting Room Audio Failure,Existing meeting room audio is not working,meeting microphone not working|room audio failure,required_if_owned,true,Meetings & Audio Visual
+INC012,INC,Office WiFi Outage,Office wireless connection has stopped working,wifi not working|office wireless outage,optional,true,Network & Connectivity
+INC013,INC,Laptop Extremely Slow,Assigned laptop performance has degraded,slow laptop|laptop freezing,required_if_owned,true,Endpoint Hardware
+INC014,INC,Business Application Error,Business application returns errors during use,workday error|crm not working,optional,true,Business Systems
+INC015,INC,Developer Platform Outage,Developer service or pipeline previously working is down,github unavailable|pipeline broken,optional,true,Cloud & Developer Tools

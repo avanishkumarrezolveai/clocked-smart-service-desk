@@ -1,0 +1,3 @@
+﻿ticket_type_id,ticket_type_name,description
+INC,Incident,Failure or degradation of something previously working
+REQ,Service Request,"Request for new access, item, configuration or change"

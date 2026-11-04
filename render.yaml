@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: clocked-smart-service-desk
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python scripts/validate_data.py
+    startCommand: gunicorn app:app --workers 2 --bind 0.0.0.0:$PORT --timeout 90
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.10
+      - key: CLOCKED_API_KEY
+        sync: false

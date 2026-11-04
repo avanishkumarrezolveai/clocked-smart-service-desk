@@ -1,0 +1,201 @@
+﻿category_id,ticket_type_id,category_name,description,domain,active
+CAT001,INC,Endpoint Hardware | Device Faults,Device Faults for the endpoint hardware service family,Endpoint Hardware,true
+CAT002,INC,Endpoint Hardware | Service Interruptions,Service Interruptions for the endpoint hardware service family,Endpoint Hardware,true
+CAT003,REQ,Endpoint Hardware | Initial Setup,Initial Setup for the endpoint hardware service family,Endpoint Hardware,true
+CAT004,REQ,Endpoint Hardware | Access & Permissions,Access & Permissions for the endpoint hardware service family,Endpoint Hardware,true
+CAT005,REQ,Endpoint Hardware | Configuration,Configuration for the endpoint hardware service family,Endpoint Hardware,true
+CAT006,REQ,Endpoint Hardware | Upgrades,Upgrades for the endpoint hardware service family,Endpoint Hardware,true
+CAT007,REQ,Endpoint Hardware | New Provisioning,New Provisioning for the endpoint hardware service family,Endpoint Hardware,true
+CAT008,REQ,Endpoint Hardware | Replacement & Return,Replacement & Return for the endpoint hardware service family,Endpoint Hardware,true
+CAT009,REQ,Endpoint Hardware | Licensing & Approval,Licensing & Approval for the endpoint hardware service family,Endpoint Hardware,true
+CAT010,REQ,Endpoint Hardware | Service Changes,Service Changes for the endpoint hardware service family,Endpoint Hardware,true
+CAT011,INC,Software & Applications | Device Faults,Device Faults for the software & applications service family,Software & Applications,true
+CAT012,INC,Software & Applications | Service Interruptions,Service Interruptions for the software & applications service family,Software & Applications,true
+CAT013,REQ,Software & Applications | Initial Setup,Initial Setup for the software & applications service family,Software & Applications,true
+CAT014,REQ,Software & Applications | Access & Permissions,Access & Permissions for the software & applications service family,Software & Applications,true
+CAT015,REQ,Software & Applications | Configuration,Configuration for the software & applications service family,Software & Applications,true
+CAT016,REQ,Software & Applications | Upgrades,Upgrades for the software & applications service family,Software & Applications,true
+CAT017,REQ,Software & Applications | New Provisioning,New Provisioning for the software & applications service family,Software & Applications,true
+CAT018,REQ,Software & Applications | Replacement & Return,Replacement & Return for the software & applications service family,Software & Applications,true
+CAT019,REQ,Software & Applications | Licensing & Approval,Licensing & Approval for the software & applications service family,Software & Applications,true
+CAT020,REQ,Software & Applications | Service Changes,Service Changes for the software & applications service family,Software & Applications,true
+CAT021,INC,Identity & Access | Device Faults,Device Faults for the identity & access service family,Identity & Access,true
+CAT022,INC,Identity & Access | Service Interruptions,Service Interruptions for the identity & access service family,Identity & Access,true
+CAT023,REQ,Identity & Access | Initial Setup,Initial Setup for the identity & access service family,Identity & Access,true
+CAT024,REQ,Identity & Access | Access & Permissions,Access & Permissions for the identity & access service family,Identity & Access,true
+CAT025,REQ,Identity & Access | Configuration,Configuration for the identity & access service family,Identity & Access,true
+CAT026,REQ,Identity & Access | Upgrades,Upgrades for the identity & access service family,Identity & Access,true
+CAT027,REQ,Identity & Access | New Provisioning,New Provisioning for the identity & access service family,Identity & Access,true
+CAT028,REQ,Identity & Access | Replacement & Return,Replacement & Return for the identity & access service family,Identity & Access,true
+CAT029,REQ,Identity & Access | Licensing & Approval,Licensing & Approval for the identity & access service family,Identity & Access,true
+CAT030,REQ,Identity & Access | Service Changes,Service Changes for the identity & access service family,Identity & Access,true
+CAT031,INC,Network & Connectivity | Device Faults,Device Faults for the network & connectivity service family,Network & Connectivity,true
+CAT032,INC,Network & Connectivity | Service Interruptions,Service Interruptions for the network & connectivity service family,Network & Connectivity,true
+CAT033,REQ,Network & Connectivity | Initial Setup,Initial Setup for the network & connectivity service family,Network & Connectivity,true
+CAT034,REQ,Network & Connectivity | Access & Permissions,Access & Permissions for the network & connectivity service family,Network & Connectivity,true
+CAT035,REQ,Network & Connectivity | Configuration,Configuration for the network & connectivity service family,Network & Connectivity,true
+CAT036,REQ,Network & Connectivity | Upgrades,Upgrades for the network & connectivity service family,Network & Connectivity,true
+CAT037,REQ,Network & Connectivity | New Provisioning,New Provisioning for the network & connectivity service family,Network & Connectivity,true
+CAT038,REQ,Network & Connectivity | Replacement & Return,Replacement & Return for the network & connectivity service family,Network & Connectivity,true
+CAT039,REQ,Network & Connectivity | Licensing & Approval,Licensing & Approval for the network & connectivity service family,Network & Connectivity,true
+CAT040,REQ,Network & Connectivity | Service Changes,Service Changes for the network & connectivity service family,Network & Connectivity,true
+CAT041,INC,Email & Collaboration | Device Faults,Device Faults for the email & collaboration service family,Email & Collaboration,true
+CAT042,INC,Email & Collaboration | Service Interruptions,Service Interruptions for the email & collaboration service family,Email & Collaboration,true
+CAT043,REQ,Email & Collaboration | Initial Setup,Initial Setup for the email & collaboration service family,Email & Collaboration,true
+CAT044,REQ,Email & Collaboration | Access & Permissions,Access & Permissions for the email & collaboration service family,Email & Collaboration,true
+CAT045,REQ,Email & Collaboration | Configuration,Configuration for the email & collaboration service family,Email & Collaboration,true
+CAT046,REQ,Email & Collaboration | Upgrades,Upgrades for the email & collaboration service family,Email & Collaboration,true
+CAT047,REQ,Email & Collaboration | New Provisioning,New Provisioning for the email & collaboration service family,Email & Collaboration,true
+CAT048,REQ,Email & Collaboration | Replacement & Return,Replacement & Return for the email & collaboration service family,Email & Collaboration,true
+CAT049,REQ,Email & Collaboration | Licensing & Approval,Licensing & Approval for the email & collaboration service family,Email & Collaboration,true
+CAT050,REQ,Email & Collaboration | Service Changes,Service Changes for the email & collaboration service family,Email & Collaboration,true
+CAT051,INC,Printing & Scanning | Device Faults,Device Faults for the printing & scanning service family,Printing & Scanning,true
+CAT052,INC,Printing & Scanning | Service Interruptions,Service Interruptions for the printing & scanning service family,Printing & Scanning,true
+CAT053,REQ,Printing & Scanning | Initial Setup,Initial Setup for the printing & scanning service family,Printing & Scanning,true
+CAT054,REQ,Printing & Scanning | Access & Permissions,Access & Permissions for the printing & scanning service family,Printing & Scanning,true
+CAT055,REQ,Printing & Scanning | Configuration,Configuration for the printing & scanning service family,Printing & Scanning,true
+CAT056,REQ,Printing & Scanning | Upgrades,Upgrades for the printing & scanning service family,Printing & Scanning,true
+CAT057,REQ,Printing & Scanning | New Provisioning,New Provisioning for the printing & scanning service family,Printing & Scanning,true
+CAT058,REQ,Printing & Scanning | Replacement & Return,Replacement & Return for the printing & scanning service family,Printing & Scanning,true
+CAT059,REQ,Printing & Scanning | Licensing & Approval,Licensing & Approval for the printing & scanning service family,Printing & Scanning,true
+CAT060,REQ,Printing & Scanning | Service Changes,Service Changes for the printing & scanning service family,Printing & Scanning,true
+CAT061,INC,Mobile & Telephony | Device Faults,Device Faults for the mobile & telephony service family,Mobile & Telephony,true
+CAT062,INC,Mobile & Telephony | Service Interruptions,Service Interruptions for the mobile & telephony service family,Mobile & Telephony,true
+CAT063,REQ,Mobile & Telephony | Initial Setup,Initial Setup for the mobile & telephony service family,Mobile & Telephony,true
+CAT064,REQ,Mobile & Telephony | Access & Permissions,Access & Permissions for the mobile & telephony service family,Mobile & Telephony,true
+CAT065,REQ,Mobile & Telephony | Configuration,Configuration for the mobile & telephony service family,Mobile & Telephony,true
+CAT066,REQ,Mobile & Telephony | Upgrades,Upgrades for the mobile & telephony service family,Mobile & Telephony,true
+CAT067,REQ,Mobile & Telephony | New Provisioning,New Provisioning for the mobile & telephony service family,Mobile & Telephony,true
+CAT068,REQ,Mobile & Telephony | Replacement & Return,Replacement & Return for the mobile & telephony service family,Mobile & Telephony,true
+CAT069,REQ,Mobile & Telephony | Licensing & Approval,Licensing & Approval for the mobile & telephony service family,Mobile & Telephony,true
+CAT070,REQ,Mobile & Telephony | Service Changes,Service Changes for the mobile & telephony service family,Mobile & Telephony,true
+CAT071,INC,Storage & File Services | Device Faults,Device Faults for the storage & file services service family,Storage & File Services,true
+CAT072,INC,Storage & File Services | Service Interruptions,Service Interruptions for the storage & file services service family,Storage & File Services,true
+CAT073,REQ,Storage & File Services | Initial Setup,Initial Setup for the storage & file services service family,Storage & File Services,true
+CAT074,REQ,Storage & File Services | Access & Permissions,Access & Permissions for the storage & file services service family,Storage & File Services,true
+CAT075,REQ,Storage & File Services | Configuration,Configuration for the storage & file services service family,Storage & File Services,true
+CAT076,REQ,Storage & File Services | Upgrades,Upgrades for the storage & file services service family,Storage & File Services,true
+CAT077,REQ,Storage & File Services | New Provisioning,New Provisioning for the storage & file services service family,Storage & File Services,true
+CAT078,REQ,Storage & File Services | Replacement & Return,Replacement & Return for the storage & file services service family,Storage & File Services,true
+CAT079,REQ,Storage & File Services | Licensing & Approval,Licensing & Approval for the storage & file services service family,Storage & File Services,true
+CAT080,REQ,Storage & File Services | Service Changes,Service Changes for the storage & file services service family,Storage & File Services,true
+CAT081,INC,Security & Compliance | Device Faults,Device Faults for the security & compliance service family,Security & Compliance,true
+CAT082,INC,Security & Compliance | Service Interruptions,Service Interruptions for the security & compliance service family,Security & Compliance,true
+CAT083,REQ,Security & Compliance | Initial Setup,Initial Setup for the security & compliance service family,Security & Compliance,true
+CAT084,REQ,Security & Compliance | Access & Permissions,Access & Permissions for the security & compliance service family,Security & Compliance,true
+CAT085,REQ,Security & Compliance | Configuration,Configuration for the security & compliance service family,Security & Compliance,true
+CAT086,REQ,Security & Compliance | Upgrades,Upgrades for the security & compliance service family,Security & Compliance,true
+CAT087,REQ,Security & Compliance | New Provisioning,New Provisioning for the security & compliance service family,Security & Compliance,true
+CAT088,REQ,Security & Compliance | Replacement & Return,Replacement & Return for the security & compliance service family,Security & Compliance,true
+CAT089,REQ,Security & Compliance | Licensing & Approval,Licensing & Approval for the security & compliance service family,Security & Compliance,true
+CAT090,REQ,Security & Compliance | Service Changes,Service Changes for the security & compliance service family,Security & Compliance,true
+CAT091,INC,Employee Lifecycle | Device Faults,Device Faults for the employee lifecycle service family,Employee Lifecycle,true
+CAT092,INC,Employee Lifecycle | Service Interruptions,Service Interruptions for the employee lifecycle service family,Employee Lifecycle,true
+CAT093,REQ,Employee Lifecycle | Initial Setup,Initial Setup for the employee lifecycle service family,Employee Lifecycle,true
+CAT094,REQ,Employee Lifecycle | Access & Permissions,Access & Permissions for the employee lifecycle service family,Employee Lifecycle,true
+CAT095,REQ,Employee Lifecycle | Configuration,Configuration for the employee lifecycle service family,Employee Lifecycle,true
+CAT096,REQ,Employee Lifecycle | Upgrades,Upgrades for the employee lifecycle service family,Employee Lifecycle,true
+CAT097,REQ,Employee Lifecycle | New Provisioning,New Provisioning for the employee lifecycle service family,Employee Lifecycle,true
+CAT098,REQ,Employee Lifecycle | Replacement & Return,Replacement & Return for the employee lifecycle service family,Employee Lifecycle,true
+CAT099,REQ,Employee Lifecycle | Licensing & Approval,Licensing & Approval for the employee lifecycle service family,Employee Lifecycle,true
+CAT100,REQ,Employee Lifecycle | Service Changes,Service Changes for the employee lifecycle service family,Employee Lifecycle,true
+CAT101,INC,Meetings & Audio Visual | Device Faults,Device Faults for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT102,INC,Meetings & Audio Visual | Service Interruptions,Service Interruptions for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT103,REQ,Meetings & Audio Visual | Initial Setup,Initial Setup for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT104,REQ,Meetings & Audio Visual | Access & Permissions,Access & Permissions for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT105,REQ,Meetings & Audio Visual | Configuration,Configuration for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT106,REQ,Meetings & Audio Visual | Upgrades,Upgrades for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT107,REQ,Meetings & Audio Visual | New Provisioning,New Provisioning for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT108,REQ,Meetings & Audio Visual | Replacement & Return,Replacement & Return for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT109,REQ,Meetings & Audio Visual | Licensing & Approval,Licensing & Approval for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT110,REQ,Meetings & Audio Visual | Service Changes,Service Changes for the meetings & audio visual service family,Meetings & Audio Visual,true
+CAT111,INC,Cloud & Developer Tools | Device Faults,Device Faults for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT112,INC,Cloud & Developer Tools | Service Interruptions,Service Interruptions for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT113,REQ,Cloud & Developer Tools | Initial Setup,Initial Setup for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT114,REQ,Cloud & Developer Tools | Access & Permissions,Access & Permissions for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT115,REQ,Cloud & Developer Tools | Configuration,Configuration for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT116,REQ,Cloud & Developer Tools | Upgrades,Upgrades for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT117,REQ,Cloud & Developer Tools | New Provisioning,New Provisioning for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT118,REQ,Cloud & Developer Tools | Replacement & Return,Replacement & Return for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT119,REQ,Cloud & Developer Tools | Licensing & Approval,Licensing & Approval for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT120,REQ,Cloud & Developer Tools | Service Changes,Service Changes for the cloud & developer tools service family,Cloud & Developer Tools,true
+CAT121,INC,Business Systems | Device Faults,Device Faults for the business systems service family,Business Systems,true
+CAT122,INC,Business Systems | Service Interruptions,Service Interruptions for the business systems service family,Business Systems,true
+CAT123,REQ,Business Systems | Initial Setup,Initial Setup for the business systems service family,Business Systems,true
+CAT124,REQ,Business Systems | Access & Permissions,Access & Permissions for the business systems service family,Business Systems,true
+CAT125,REQ,Business Systems | Configuration,Configuration for the business systems service family,Business Systems,true
+CAT126,REQ,Business Systems | Upgrades,Upgrades for the business systems service family,Business Systems,true
+CAT127,REQ,Business Systems | New Provisioning,New Provisioning for the business systems service family,Business Systems,true
+CAT128,REQ,Business Systems | Replacement & Return,Replacement & Return for the business systems service family,Business Systems,true
+CAT129,REQ,Business Systems | Licensing & Approval,Licensing & Approval for the business systems service family,Business Systems,true
+CAT130,REQ,Business Systems | Service Changes,Service Changes for the business systems service family,Business Systems,true
+CAT131,INC,Workplace Technology | Device Faults,Device Faults for the workplace technology service family,Workplace Technology,true
+CAT132,INC,Workplace Technology | Service Interruptions,Service Interruptions for the workplace technology service family,Workplace Technology,true
+CAT133,REQ,Workplace Technology | Initial Setup,Initial Setup for the workplace technology service family,Workplace Technology,true
+CAT134,REQ,Workplace Technology | Access & Permissions,Access & Permissions for the workplace technology service family,Workplace Technology,true
+CAT135,REQ,Workplace Technology | Configuration,Configuration for the workplace technology service family,Workplace Technology,true
+CAT136,REQ,Workplace Technology | Upgrades,Upgrades for the workplace technology service family,Workplace Technology,true
+CAT137,REQ,Workplace Technology | New Provisioning,New Provisioning for the workplace technology service family,Workplace Technology,true
+CAT138,REQ,Workplace Technology | Replacement & Return,Replacement & Return for the workplace technology service family,Workplace Technology,true
+CAT139,REQ,Workplace Technology | Licensing & Approval,Licensing & Approval for the workplace technology service family,Workplace Technology,true
+CAT140,REQ,Workplace Technology | Service Changes,Service Changes for the workplace technology service family,Workplace Technology,true
+CAT141,INC,Peripherals & Accessories | Device Faults,Device Faults for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT142,INC,Peripherals & Accessories | Service Interruptions,Service Interruptions for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT143,REQ,Peripherals & Accessories | Initial Setup,Initial Setup for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT144,REQ,Peripherals & Accessories | Access & Permissions,Access & Permissions for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT145,REQ,Peripherals & Accessories | Configuration,Configuration for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT146,REQ,Peripherals & Accessories | Upgrades,Upgrades for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT147,REQ,Peripherals & Accessories | New Provisioning,New Provisioning for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT148,REQ,Peripherals & Accessories | Replacement & Return,Replacement & Return for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT149,REQ,Peripherals & Accessories | Licensing & Approval,Licensing & Approval for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT150,REQ,Peripherals & Accessories | Service Changes,Service Changes for the peripherals & accessories service family,Peripherals & Accessories,true
+CAT151,INC,IT Procurement | Device Faults,Device Faults for the it procurement service family,IT Procurement,true
+CAT152,INC,IT Procurement | Service Interruptions,Service Interruptions for the it procurement service family,IT Procurement,true
+CAT153,REQ,IT Procurement | Initial Setup,Initial Setup for the it procurement service family,IT Procurement,true
+CAT154,REQ,IT Procurement | Access & Permissions,Access & Permissions for the it procurement service family,IT Procurement,true
+CAT155,REQ,IT Procurement | Configuration,Configuration for the it procurement service family,IT Procurement,true
+CAT156,REQ,IT Procurement | Upgrades,Upgrades for the it procurement service family,IT Procurement,true
+CAT157,REQ,IT Procurement | New Provisioning,New Provisioning for the it procurement service family,IT Procurement,true
+CAT158,REQ,IT Procurement | Replacement & Return,Replacement & Return for the it procurement service family,IT Procurement,true
+CAT159,REQ,IT Procurement | Licensing & Approval,Licensing & Approval for the it procurement service family,IT Procurement,true
+CAT160,REQ,IT Procurement | Service Changes,Service Changes for the it procurement service family,IT Procurement,true
+CAT161,INC,Licensing & Subscriptions | Device Faults,Device Faults for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT162,INC,Licensing & Subscriptions | Service Interruptions,Service Interruptions for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT163,REQ,Licensing & Subscriptions | Initial Setup,Initial Setup for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT164,REQ,Licensing & Subscriptions | Access & Permissions,Access & Permissions for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT165,REQ,Licensing & Subscriptions | Configuration,Configuration for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT166,REQ,Licensing & Subscriptions | Upgrades,Upgrades for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT167,REQ,Licensing & Subscriptions | New Provisioning,New Provisioning for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT168,REQ,Licensing & Subscriptions | Replacement & Return,Replacement & Return for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT169,REQ,Licensing & Subscriptions | Licensing & Approval,Licensing & Approval for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT170,REQ,Licensing & Subscriptions | Service Changes,Service Changes for the licensing & subscriptions service family,Licensing & Subscriptions,true
+CAT171,INC,Data & Analytics | Device Faults,Device Faults for the data & analytics service family,Data & Analytics,true
+CAT172,INC,Data & Analytics | Service Interruptions,Service Interruptions for the data & analytics service family,Data & Analytics,true
+CAT173,REQ,Data & Analytics | Initial Setup,Initial Setup for the data & analytics service family,Data & Analytics,true
+CAT174,REQ,Data & Analytics | Access & Permissions,Access & Permissions for the data & analytics service family,Data & Analytics,true
+CAT175,REQ,Data & Analytics | Configuration,Configuration for the data & analytics service family,Data & Analytics,true
+CAT176,REQ,Data & Analytics | Upgrades,Upgrades for the data & analytics service family,Data & Analytics,true
+CAT177,REQ,Data & Analytics | New Provisioning,New Provisioning for the data & analytics service family,Data & Analytics,true
+CAT178,REQ,Data & Analytics | Replacement & Return,Replacement & Return for the data & analytics service family,Data & Analytics,true
+CAT179,REQ,Data & Analytics | Licensing & Approval,Licensing & Approval for the data & analytics service family,Data & Analytics,true
+CAT180,REQ,Data & Analytics | Service Changes,Service Changes for the data & analytics service family,Data & Analytics,true
+CAT181,INC,Service Desk Operations | Device Faults,Device Faults for the service desk operations service family,Service Desk Operations,true
+CAT182,INC,Service Desk Operations | Service Interruptions,Service Interruptions for the service desk operations service family,Service Desk Operations,true
+CAT183,REQ,Service Desk Operations | Initial Setup,Initial Setup for the service desk operations service family,Service Desk Operations,true
+CAT184,REQ,Service Desk Operations | Access & Permissions,Access & Permissions for the service desk operations service family,Service Desk Operations,true
+CAT185,REQ,Service Desk Operations | Configuration,Configuration for the service desk operations service family,Service Desk Operations,true
+CAT186,REQ,Service Desk Operations | Upgrades,Upgrades for the service desk operations service family,Service Desk Operations,true
+CAT187,REQ,Service Desk Operations | New Provisioning,New Provisioning for the service desk operations service family,Service Desk Operations,true
+CAT188,REQ,Service Desk Operations | Replacement & Return,Replacement & Return for the service desk operations service family,Service Desk Operations,true
+CAT189,REQ,Service Desk Operations | Licensing & Approval,Licensing & Approval for the service desk operations service family,Service Desk Operations,true
+CAT190,REQ,Service Desk Operations | Service Changes,Service Changes for the service desk operations service family,Service Desk Operations,true
+CAT191,INC,Remote Work Services | Device Faults,Device Faults for the remote work services service family,Remote Work Services,true
+CAT192,INC,Remote Work Services | Service Interruptions,Service Interruptions for the remote work services service family,Remote Work Services,true
+CAT193,REQ,Remote Work Services | Initial Setup,Initial Setup for the remote work services service family,Remote Work Services,true
+CAT194,REQ,Remote Work Services | Access & Permissions,Access & Permissions for the remote work services service family,Remote Work Services,true
+CAT195,REQ,Remote Work Services | Configuration,Configuration for the remote work services service family,Remote Work Services,true
+CAT196,REQ,Remote Work Services | Upgrades,Upgrades for the remote work services service family,Remote Work Services,true
+CAT197,REQ,Remote Work Services | New Provisioning,New Provisioning for the remote work services service family,Remote Work Services,true
+CAT198,REQ,Remote Work Services | Replacement & Return,Replacement & Return for the remote work services service family,Remote Work Services,true
+CAT199,REQ,Remote Work Services | Licensing & Approval,Licensing & Approval for the remote work services service family,Remote Work Services,true
+CAT200,REQ,Remote Work Services | Service Changes,Service Changes for the remote work services service family,Remote Work Services,true

@@ -1,0 +1,11 @@
+﻿document_id,title,path,topic,audience,status,summary
+KB001,Password reset and account unlock,data/knowledge/documents/KB001_password_reset_and_account_unlock.md,Identity & Access,All demo users,Active,How to reset a forgotten password and unlock a standard demo account.
+KB002,Laptop does not power on,data/knowledge/documents/KB002_laptop_does_not_power_on.md,Endpoint Hardware,All demo users,Active,First troubleshooting steps for an unresponsive laptop.
+KB003,VPN connection troubleshooting,data/knowledge/documents/KB003_vpn_connection_troubleshooting.md,Network & Connectivity,All demo users,Active,What to try when an existing VPN connection fails.
+KB004,Microsoft Teams audio troubleshooting,data/knowledge/documents/KB004_microsoft_teams_audio_troubleshooting.md,Email & Collaboration,All demo users,Active,How to inspect microphone and speaker settings.
+KB005,Software installation guidance,data/knowledge/documents/KB005_software_installation_guidance.md,Software & Applications,All demo users,Active,Distinguish new software requests from broken installed software.
+KB006,Printer not printing,data/knowledge/documents/KB006_printer_not_printing.md,Printing & Scanning,All demo users,Active,Troubleshoot a printer that was previously working.
+KB007,Shared drive access issues,data/knowledge/documents/KB007_shared_drive_access_issues.md,Storage & File Services,All demo users,Active,Determine whether drive access is broken or new permission is required.
+KB008,Corporate mobile setup,data/knowledge/documents/KB008_corporate_mobile_setup.md,Mobile & Telephony,All demo users,Active,Instructions for enrolling a new company managed device.
+KB009,MFA authentication help,data/knowledge/documents/KB009_mfa_authentication_help.md,Identity & Access,All demo users,Active,Guidance for legitimate multifactor authentication prompts.
+KB010,Device loss and replacement,data/knowledge/documents/KB010_device_loss_and_replacement.md,Endpoint Hardware,All demo users,Active,How to report a lost device or ask for a replacement.

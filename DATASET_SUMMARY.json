@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "generated_seed": 20261103,
+  "counts": {
+    "users": 200,
+    "assets": 200,
+    "service_offerings": 200,
+    "incident_offerings": 15,
+    "offerings_combined": 215,
+    "categories": 200,
+    "subcategories": 260,
+    "allowed_mappings": 430,
+    "offering_fields": 268,
+    "knowledge_documents": 10,
+    "live_chat_queues": 13,
+    "demo_cases": 46
+  },
+  "has_live_api": false,
+  "contains_real_user_data": false
+}
